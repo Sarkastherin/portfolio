@@ -1,0 +1,21 @@
+---
+import ServicesCards from "../components/ServicesCards.astro";
+import CTA from "../components/CTA.astro";
+import ContainerPages from "../components/ContainerPages.astro";
+const pageTitle = "Servicios";
+---
+
+<ContainerPages
+  pageTitle="Servicios"
+  pageTitleComplete="Servicios que te ayudan a trabajar mejor"
+  description="Soluciones digitales personalizadas para optimizar procesos, automatizar tareas y mejorar tu gestión."
+  imgUrl="../../public/services-portrait.jpg"
+>
+  <ServicesCards />
+  <CTA
+    title="¿No sabés por dónde empezar?"
+    description="Si tienes dudas sobre qué servicio se adapta mejor a tus necesidades,escríbime y lo vemos juntos. Estoy acá para ayudarte a trabajar de forma más simple, eficiente y conectada."
+    href="/contactme"
+    buttonTitle="Reservar una reunión"
+  />
+</ContainerPages>

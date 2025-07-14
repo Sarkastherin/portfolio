@@ -1,0 +1,29 @@
+---
+import ItemExperience from "./ItemExperience.astro";
+---
+<ol
+aria-label="Línea de tiempo con mi experiencia laboral"
+
+  class="relative space-y-8 before:absolute before:top-0 before:left-4 md:before:left-1/2 before:h-full before:w-0.5 before:rounded-full before:bg-gray-200"
+>
+  <ItemExperience
+    timeline={{ from: "Mayo 2025", to: "Actualidad" }}
+    position="🧰 Desarrolladora Web Freelance"
+    description="Desarrollo de apps personalizadas, automatizaciones, dashboards y consultoría en digitalización de procesos."
+  />
+  <ItemExperience
+    timeline={{ from: "Septiembre 2021", to: "Mayo 2025" }}
+    position="💼 Analísta de Calidad y Sistemas"
+    description="Mantenimiento y mejora del Sistema de Gestión de Calidad ISO 9001. </br> Automatización de procesos internos con <strong>Google Apps Script</strong> y <strong>Google Sheets</strong>, desarrollo de herramientas para la gestión eficiente de tareas y seguimiento de proyectos."
+  />
+  <ItemExperience
+    timeline={{ from: "Abril 2011", to: "Diciembre 2018" }}
+    position="💼 Experiencia en Proyectos de Ingeniería"
+    description="Inspección en proyectos de infraestructura, desarrollo de computos para licitaciones, dibujante proyectista y planificadora de proyectos."
+  />
+  <ItemExperience
+    timeline={{ from: "Octubre 2007", to: "Diciembre 2011" }}
+    position="🎓 Carrera Universitaria en TSU Construcción Civil"
+    description='Obtención del título de <strong>Técnico Superior Universitario en Construcción Civil</strong>, <em>Equivalente a tecnicatura terciaria/universitaria de 3 años, con orientación en planificación y ejecución de obras civiles (estructuras, planos, costos, supervisión).</em>'
+  />
+</ol>

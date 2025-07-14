@@ -1,0 +1,40 @@
+---
+import SectionLayout from "../layouts/SectionLayout.astro";
+---
+
+<SectionLayout title="Sobre mí">
+    <div class="mx-auto">
+      <div
+        class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8"
+      >
+        <div class="text-left">
+          <div class="max-w-lg md:max-w-none">
+            <h2 class="text-2xl font-semibold sm:text-3xl">
+              Hola, soy Katherin 👋
+            </h2>
+
+            <p class="my-4">
+              Desarrolladora web freelance y analista de procesos. Ayudo a
+              empresas a digitalizar tareas repetitivas, crear herramientas
+              personalizadas y automatizar procesos para que puedan trabajar
+              mejor y más liviano.
+            </p>
+            <a
+              href="/about"
+              class="inline-block text-rose-500 font-semibold hover:underline"
+            >
+              Conoce más sobre mí →
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="rounded"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+</SectionLayout>

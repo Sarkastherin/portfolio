@@ -1,0 +1,28 @@
+---
+const { timeline, position, description } = Astro.props as {
+  timeline: { from: number; to: number | "Actualidad" | "Presente" };
+  position: string;
+  description: string; //poder pasar HTML
+};
+---
+
+<li
+  class="group relative grid grid-cols-1 md:grid-cols-2 md:odd:-me-3 md:even:-ms-3"
+>
+  <div
+    class="relative flex items-start gap-4 md:group-odd:flex-row-reverse md:group-odd:text-right md:group-even:order-last"
+  >
+    <span class="size-3 shrink-0 rounded-full bg-rose-500"></span>
+    <div class="-mt-2">
+      <time class="text-xs/none font-medium text-gray-700"
+        >{timeline.from} – {timeline.to}</time
+      >
+      <h3 class="text-lg font-bold text-gray-900">
+        {position}
+      </h3>
+      <p class="mt-0.5 text-sm text-gray-700" set:html={description}></p>
+
+    </div>
+  </div>
+  <div aria-hidden="true" class="hidden md:block"></div>
+</li>

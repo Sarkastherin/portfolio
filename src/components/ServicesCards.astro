@@ -1,0 +1,47 @@
+---
+const services = [
+  {
+    title: "Aplicaciones Web Personalizadas",
+    description:
+      "Interfaces intuitivas y funcionales creadas a medida. Herramientas que se adaptan a tus procesos reales y resuelven necesidades específicas.",
+    icon: "💻",
+    link: "/services/apps-web"
+  },
+  {
+    title: "Automatización con Google Workspace",
+    description:
+      "Conecta hojas, correos y formularios para trabajar más rápido. Elimina tareas repetitivas con Apps Script y automatizaciones inteligentes.",
+    icon: "⚙️",
+    link: "/services/automatizacion"
+  },
+  {
+    title: "Dashboards Interactivos",
+    description:
+      "Visualizá lo importante con paneles automáticos y claros. Indicadores en tiempo real y análisis de datos con Google Sheets y otras herramientas.",
+    icon: "📊",
+    link: "/services/dashboards"
+  },
+  {
+    title: "Optimización de Procesos",
+    description:
+      "Análisis y mejora de tareas repetitivas vinculadas a la carga y gestión de datos. Simplificá flujos de trabajo y automatizá pasos innecesarios.",
+    icon: "🔍",
+    link: "/services/optimizar-procesos"
+  }
+];
+
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 w-full">
+  {
+    services.map((service) => (
+      <a href={service.link} class="block bg-white shadow-md rounded-2xl p-6 text-left transition hover:shadow-lg hover:scale-[1.02]">
+        <div class="text-4xl mb-4">{service.icon}</div>
+        <h3 class="text-xl font-semibold text-stone-800 mb-2">
+          {service.title}
+        </h3>
+        <p class="text-stone-600 text-sm">{service.description}</p>
+      </a>
+    ))
+  }
+</div>

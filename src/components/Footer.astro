@@ -1,5 +1,8 @@
 ---
 import Social from "./Social.astro";
+import { FaPinterestSquare, FaLinkedin, FaYoutubeSquare } from "react-icons/fa";
+
+
 ---
 <style>
   footer {
@@ -8,8 +11,8 @@ import Social from "./Social.astro";
     margin-top: 2rem;
   }
 </style>
-<footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+<footer class="fixed bottom-0 left-0 right-0 bg-stone-200 dark:bg-stone-700 text-stone-800 dark:text-stone-100 p-4 flex justify-center items-center">
+  <Social platform="linkedin" username="katherin-guerrero" ><FaLinkedin size={28}/></Social>
+  <Social platform="pinterest" username="sarkastherin"><FaPinterestSquare size={28}/></Social>
+  <Social platform="youtube" username="astrodotbuild" ><FaYoutubeSquare size={28}/></Social>
 </footer>

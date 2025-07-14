@@ -1,11 +1,55 @@
 ---
-import Navigation from "./Navigation.astro";
-import Hamburger from "./Hamburger.astro"
+import NavLink from "./NavLink.astro";
+import ButtonNav from "./ButtonNav.astro";
+import { Image } from "astro:assets";
+import logo from "../../public/coding-ia.png";
 ---
 
-<header>
-  <nav>
-    <Hamburger />
-    <Navigation />
-  </nav>
+<header class="bg-stone-200">
+  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <div class="md:flex md:items-center md:gap-12">
+        <a
+          class="text-rose-500 dark:text-rose-500 flex items-center gap-2"
+          href="/"
+        >
+          <Image class="w-12" src={logo} alt="logo" />
+          <div class="text-2xl font-mono font-bold">&lt;kathe/&gt;</div>
+        </a>
+      </div>
+
+      <div class="hidden md:block">
+        <nav aria-label="Global" class="flex items-center gap-6">
+          <ul class="flex items-center gap-6 text-sm">
+            <NavLink
+              href="/"
+              title="Inicio"
+              active={Astro.url.pathname === "/"}
+            />
+            <NavLink
+              href="/services"
+              title="Servicios"
+              active={Astro.url.pathname === "/services"}
+            />
+            <NavLink
+              href="/about"
+              title="Sobre mi"
+              active={Astro.url.pathname === "/about"}
+            />
+            <NavLink
+              href="/blog"
+              title="Blog"
+              active={Astro.url.pathname === "/blog"}
+            />
+            <NavLink
+              href="/downloads"
+              title="Descargas"
+              active={Astro.url.pathname === "/downloads"}
+            />
+          </ul>
+          <ButtonNav href="/contactme" title="Contáctame" />
+        </nav>
+      </div>
+    </div>
+  </div>
 </header>

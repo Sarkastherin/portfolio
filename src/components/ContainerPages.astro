@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const { pageTitle, pageTitleComplete, description, imgUrl } = Astro.props;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="mx-auto flex flex-col gap-16 pt-20">
+    <section>
+      <div class="mx-auto max-w-screen-xl">
+        <div class="space-y-4 md:space-y-8">
+          <div class="max-w-xl">
+            <h2 class="text-2xl font-semibold sm:text-3xl">
+              {pageTitleComplete}
+            </h2>
+
+            <p class="mt-4 max-w-xl text-xl text-stone-600">
+              {description}
+            </p>
+          </div>
+          {
+            imgUrl && (
+              <div class="h-124 w-full overflow-hidden rounded-lg flex items-center justify-center">
+                <img src={imgUrl} class="rounded w-full" alt="" />
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </section>
+    <slot />
+  </div>
+</BaseLayout>

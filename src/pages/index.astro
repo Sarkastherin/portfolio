@@ -1,7 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import Services from "../components/Services.astro";
+import StartProjects from "../components/StartProjects.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Testimonies from "../components/Testimonies.astro";
+import CTA from "../components/CTA.astro";
+
 const pageTitle = "Página de inicio";
 ---
+
 <BaseLayout pageTitle={pageTitle}>
-  <h2>Mi impresionante subtítulo del blog</h2>
+  <HeroSection />
+  <Services />
+  <StartProjects />
+  <AboutMe />
+  <Testimonies />
+  <CTA
+    title="¿Tienes una idea o proceso que querés digitalizar?"
+    description="Estoy acá para ayudarte a hacerlo realidad."
+    href="/cotactme"
+    buttonTitle="Contáctame"
+  />
 </BaseLayout>

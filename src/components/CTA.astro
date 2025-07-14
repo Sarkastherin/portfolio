@@ -1,0 +1,14 @@
+---
+import ButtonNav from "./ButtonNav.astro";
+const { title, description, href, buttonTitle } = Astro.props as { title: string; description: string; href: string; buttonTitle: string };
+---
+
+<section class="bg-stone-200 rounded-2xl p-8 text-center shadow-inner">
+  <h3 class="text-2xl font-semibold text-stone-800 mb-4">
+    {title}
+  </h3>
+  <p class="text-stone-700 max-w-xl mx-auto mb-6">
+    {description}
+  </p>
+  <ButtonNav href={href} title={buttonTitle} />
+</section>

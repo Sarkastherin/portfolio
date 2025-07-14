@@ -1,0 +1,61 @@
+---
+import SectionLayout from "../layouts/SectionLayout.astro";
+
+const projects = [
+  {
+    title: "App de Cotizaciones y Oportunidades",
+    description:
+      "Aplicación web que permite generar oportunidades comerciales y presupuestos con precios dinámicos.",
+    tech: ["React", "Supabase", "Tailwind"],
+    image:
+      "https://plus.unsplash.com/premium_photo-1720551256983-445d23d516b2?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Coloca aquí tu imagen
+    link: "#",
+  },
+  {
+    title: "Dashboard de Indicadores",
+    description:
+      "Dashboard interactivo conectado con Google Sheets para visualizar métricas de rendimiento.",
+    tech: ["Google Apps Script", "Data Studio", "Sheets"],
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=815&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    link: "#",
+  },
+];
+---
+
+<SectionLayout title="Proyectos"
+  ><div class="grid gap-8 md:grid-cols-2 text-start">
+    {
+      projects.map((project) => (
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
+          <img
+            src={project.image}
+            alt={project.title}
+            class="w-full h-48 object-cover"
+          />
+
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-stone-800 mb-2">
+              {project.title}
+            </h3>
+            <p class="text-sm text-stone-600 mb-4">{project.description}</p>
+
+            <ul class="flex flex-wrap gap-2 text-xs text-stone-500 mb-4">
+              {project.tech.map((tool) => (
+                <li class="bg-stone-200 px-2 py-1 rounded-full">{tool}</li>
+              ))}
+            </ul>
+
+            <a
+              href={project.link}
+              target="_blank"
+              class="inline-block text-rose-500 hover:underline text-sm font-medium"
+            >
+              Ver proyecto →
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div></SectionLayout
+>

@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import image from "../../public/programming-girl.png";
+import ButtonNav from "./ButtonNav.astro";
+---
+
+<section class="lg:grid lg:h-screen lg:place-content-center lg:py-0 py-20">
+  <div
+    class="mx-auto md:grid md:grid-cols-2 md:items-center md:gap-4"
+  >
+    <div class="max-w-prose text-center md:text-left lg:pr-8">
+      <h1 class="text-4xl font-bold lg:text-5xl">
+        Desarrolladora 
+        <strong class="text-rose-500"> web </strong>
+        freelance
+      </h1>
+
+      <p class="mt-4 text-base text-pretty text-stone-700 sm:text-lg/relaxed">
+        Creo soluciones digitales que automatizan tareas, mejoran procesos y
+        hacen que tu negocio fluya mejor.
+      </p>
+
+      <div class="mt-4 flex gap-4 sm:mt-6 justify-center md:justify-start">
+        <ButtonNav title="Contáctame" href="/contactme" />
+        <ButtonNav title="Ver servicios" outline={true} href="/services"/>
+      </div>
+    </div>
+    <Image class:list={"w-150"} src={image} alt="progrmming girl" />
+  </div>
+</section>

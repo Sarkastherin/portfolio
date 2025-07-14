@@ -1,64 +1,57 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Sobre mi";
-
-const identity = {
-  firstName: "Katherin",
-  country: "Argentina",
-  occupation: "Desarrolladora web",
-  hobbies: ["senderismo", "video juegos", "yoga"],
-};
-
-const skills = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
-  "Astro",
-  "Redacción de documentos",
-];
-const happy = true;
-const finished = false;
-const goal = 3;
-
-const skillColor = "navy";
+import ServicesCards from "../components/ServicesCards.astro";
+import CTA from "../components/CTA.astro";
+import ContainerPages from "../components/ContainerPages.astro";
+import Experience from "../components/Experience.astro";
+const pageTitle = "Sobre mí";
 ---
 
-<style define:vars={{ skillColor }}>
-  .skill {
-    color: var(--skillColor);
-    font-weight: bold;
-  }
-</style>
-<BaseLayout pageTitle={pageTitle}>
-  <h2>... ¡y mi nuevo sitio Astro!</h2>
+<ContainerPages
+  pageTitle={pageTitle}
+  pageTitleComplete="Sobre mí"
+  description="La tecnología puede ser más humana, simple y útil. Y eso es lo que busco cada día."
+  imgUrl={null}
+>
+  <div class="grid md:grid-cols-2 gap-10 items-center -mt-10">
+    <img
+      src="/public/woman_in_desk.jpg"
+      alt="Katherin Guerrero"
+      class="w-full rounded-xl shadow-md"
+    />
 
-  <p>He aquí algunos datos sobre mí:</p>
-  <ul>
-    <li>Me llamo {identity.firstName}.</li>
-    <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
-    {
-      identity.hobbies.length >= 2 && (
-        <li>
-          Dos de mis aficiones son: {identity.hobbies[0]} y{" "}
-          {identity.hobbies[1]}
-        </li>
-      )
-    }
-  </ul>
-  <p>Mis habilidades son:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
-  {happy && <p>¡Estoy feliz de aprender Astro!</p>}
+    <div class="space-y-4 text-base">
+      <p>
+        Soy Katherin Guerrero, desarrolladora web, analista de procesos y una
+        convencida de que la tecnología está para hacernos la vida más liviana.
+      </p>
+      <p>
+        Durante más de 15 años trabajé en áreas técnicas y administrativas,
+        desde proyectos de ingeniería hasta automatización de tareas
+        repetitivas. Hoy elijo dedicarme a ayudar a personas y empresas a
+        trabajar mejor, con soluciones digitales hechas a medida.
+      </p>
+      <p>
+        Me encanta entender cómo funcionan los procesos, encontrar esos puntos
+        donde se pierde tiempo o energía... y crear algo que los resuelva.
+      </p>
+    </div>
+  </div>
+  <div>
+    <h2 id="experiencia" class="text-2xl font-semibold mb-6">
+      Trayectoria Profesional
+    </h2>
 
-  {finished && <p>¡He terminado este tutorial!</p>}
-
-  {
-    goal === 3 ? (
-      <p>Mi objetivo es terminar en 3 días.</p>
-    ) : (
-      <p>Mi objetivo no son 3 días.</p>
-    )
-  }
-</BaseLayout>
+    <p class="mb-8">
+      He trabajado en diversas áreas, desde la planificación de proyectos
+      eléctricos hasta la mejora de procesos internos. Aquí te cuento un poco
+      más sobre mi trayectoria:
+    </p>
+    <Experience />
+  </div>
+  <!-- Enfoque de trabajo -->
+    <div class="bg-white p-6 rounded-xl shadow">
+      <p class="text-stone-700 text-lg text-center max-w-3xl mx-auto">
+        Creo que el trabajo no tiene que ser tan pesado. Que si algo se repite mucho, se puede automatizar. Y que entender a las personas es tan fundamental como enteder el proceso.
+      </p>
+    </div>
+</ContainerPages>

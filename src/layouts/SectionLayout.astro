@@ -1,0 +1,11 @@
+---
+const {title} = Astro.props as {
+  title: string;
+};
+---
+<section class="py-16 lg:py-20">
+  <div class="mx-auto">
+    <h2 class="text-center text-3xl lg:text-4xl font-bold text-rose-500 pb-12 lg:pb-16">{title}</h2>
+    <slot />
+  </div>
+</section>
