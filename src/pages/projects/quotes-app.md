@@ -24,37 +24,37 @@ solution:
     ]
 tech: [react, vitejs, "tailwindcss", "supabase", "postgresql"]
 image:
-  url: "/public/quotes-app-ss/portada.png"
+  url: "/quotes-app-ss/portada.png"
   alt: "Miniatura de los arcos de Astro."
 pubDate: 2025-07-10
 screenshots:
   [
     {
-      url: "/public/quotes-app-ss/materiales.png",
+      url: "/quotes-app-ss/materiales.png",
       alt: "UI Listado de materiales",
       title: "UI: Listado de materiales",
       description: "Interfaz del listado de materiales, visualiza todos los materiales de la base de datos, y busca por descripción"
     },
     {
-      url: "/public/quotes-app-ss/material.png",
+      url: "/quotes-app-ss/material.png",
       alt: "UI Material",
       title: "UI: Material seleccionado",
       description: "Interfaz para visualizar, editar, eliminar materiales, tambien permite navegar a los precios para su edición."
     },
     {
-      url: "/public/quotes-app-ss/configuraciones.png",
+      url: "/quotes-app-ss/configuraciones.png",
       alt: "UI configuraciones",
       title: "UI: Configuraciones de materiales",
       description: "Interfaz donde el usuario puede agregar, editar, eliminar configuraciones de los materiales"
     },
     {
-      url: "/public/quotes-app-ss/oportunidad-resumen.png",
+      url: "/quotes-app-ss/oportunidad-resumen.png",
       alt: "UI Oportunidad",
       title: "UI: Oportunidad Comercial",
       description: "Interfaz de Oportunidad comercial, cuanta con diferentes pestañas para navegar esntre la oportunidad completa. Muestra la pantalla de resumen, con los datos necesario para visualizar el status de la oportunidad"
     },
     {
-      url: "/public/quotes-app-ss/informe.png",
+      url: "/quotes-app-ss/informe.png",
       alt: "UI Informe",
       title: "UI: Informe de Cotización para el cliente",
       description: "Interfaz para generar el Informe que se le enviará al cliente. Tiene diversas confoguraciones para adaptarla a la necesidad o exigencia de información"

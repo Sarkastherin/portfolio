@@ -24,25 +24,25 @@ solution:
     ]
 tech: ["google_apps_script", "google_sheets", "looker_studio", "google_sites"]
 image:
-  url: "/public/order-management/portada.png"
+  url: "/order-management/portada.png"
   alt: "Miniatura del sistema de pedidos técnicos"
 pubDate: 2025-07-16
 screenshots:
   [
     {
-      url: "/public/order-management/formulario.png",
+      url: "/order-management/formulario.png",
       alt: "Formulario de solicitud de piezas",
       title: "Formulario Dinámico",
       description: "Formulario creado con Google Apps Script, conectado a la base de datos de piezas y accesible desde un Google Site"
     },
     {
-      url: "/public/order-management/hoja-piezas.png",
+      url: "/order-management/hoja-piezas.png",
       alt: "Google Sheet con listado de piezas",
       title: "Listado de Piezas",
       description: "Base de datos editable de piezas, con códigos actualizados por el sector de Ingeniería"
     },
     {
-      url: "/public/order-management/looker-studio.png",
+      url: "/order-management/looker-studio.png",
       alt: "Visualizador de piezas en Looker Studio",
       title: "Buscador de piezas",
       description: "Visualizador para operarios, que les permite buscar por nombre o descripción y copiar el código correcto"
