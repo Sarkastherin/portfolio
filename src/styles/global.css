@@ -1,2 +1,2 @@
 @import "tailwindcss";
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/* Use Tailwind's dark mode by adding 'dark:' variants in your classes or set 'dark' mode in tailwind.config.js */
