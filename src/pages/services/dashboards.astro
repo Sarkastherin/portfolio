@@ -1,0 +1,44 @@
+---
+import ContainerPages from "../../components/ContainerPages.astro";
+import ImgAndText from "../../components/Sections/ImgAndText.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
+import CTA from "../../components/CTA.astro";
+
+const pageTitle = "Dashboards Interactivos";
+---
+
+<ContainerPages
+  pageTitle={pageTitle}
+  pageTitleComplete="Dashboards Interactivos"
+  description="Convierte tus datos en información útil. Visualiza tus indicadores clave en tiempo real y toma decisiones con claridad."
+  imgUrl={null}
+>
+  <ImgAndText
+    urlImg="/public/dashboards.png"
+    altImg="mujer trabajando en un escritorio"
+    description={`
+    <p>
+    ¿Tienes datos por todos lados y no sabes por dónde empezar? Un dashboard bien diseñado te ayuda a ver lo importante de un vistazo.
+    </p>
+
+    <p>
+    Ya sea en Google Sheets o herramientas conectadas, organizo tus datos para que puedas visualizar tus indicadores en tiempo real y tomar mejores decisiones.
+    </p>
+
+    <p>
+    Armo paneles intuitivos, personalizados, que muestran justo lo que necesitas: sin adornos innecesarios ni fórmulas complicadas.
+    </p>
+
+    <p>
+    Deja atrás los reportes eternos y comienza a tener control sobre tu información.
+    </p>`}
+  />
+
+  <CTA
+    title="Toma decisiones con información clara"
+    description="Puedo ayudarte a transformar tus datos dispersos en paneles visuales, intuitivos y automáticos. Conecta hojas de cálculo, formularios y otras fuentes para tener una vista completa de tu operación en tiempo real."
+    href="/contactme"
+    buttonTitle="Quiero visualizar mis datos"
+  />
+  <RelatedServices exclude="/services/dashboards" />
+</ContainerPages>

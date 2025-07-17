@@ -1,47 +1,40 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContainerPages from "../../components/ContainerPages.astro";
+import ImgAndText from "../../components/Sections/ImgAndText.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
 import CTA from "../../components/CTA.astro";
 
 const pageTitle = "Aplicaciones Web Personalizadas";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mb-10">
-      <h1 class="text-3xl font-bold text-rose-500 mb-4">{pageTitle}</h1>
-      <p class="text-lg">
-        Desarrollo de interfaces intuitivas y funcionales que se adaptan a tu
-        negocio. Herramientas hechas a medida para que dejes atrás soluciones
-        genéricas.
+<ContainerPages
+  pageTitle={pageTitle}
+  pageTitleComplete="Aplicaciones Web Personalizadas"
+  description="Desarrollo de interfaces intuitivas y funcionales que se adaptan a tu negocio. Herramientas hechas a medida para que dejes atrás soluciones genéricas."
+  imgUrl={null}
+>
+  <ImgAndText
+    urlImg="/public/apps-web-example.jpg"
+    altImg="Ejemplo de aplicación web"
+    description={`<p>
+        Analizo tu proceso, identifico los puntos de fricción y diseño una app
+        web adaptada a tu forma de trabajar.
       </p>
-    </div>
+      <p>
+        Puede ser una solución para presupuestos, gestión de tareas, control
+        de stock o lo que tu negocio necesite.
+      </p>
+      <p>
+        Trabajo con tecnologías modernas como React, Supabase y Google Sheets,
+        asegurando escalabilidad y eficiencia.
+      </p>`}
+  />
 
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <img
-        src="/public/apps-web-example.jpg"
-        alt=""
-        class="rounded-xl shadow-md"
-      />
-      <div class="text-base space-y-4">
-        <p>
-          Analizo tu proceso, identifico los puntos de fricción y diseño una app
-          web adaptada a tu forma de trabajar.
-        </p>
-        <p>
-          Puede ser una solución para presupuestos, gestión de tareas, control
-          de stock o lo que tu negocio necesite.
-        </p>
-        <p>
-          Trabajo con tecnologías modernas como React, Supabase y Google Sheets,
-          asegurando escalabilidad y eficiencia.
-        </p>
-      </div>
-    </div>
-    <CTA
-      title="¿Creés que una app podría ayudarte a trabajar mejor?"
-      description="Hablemos de tu idea y veamos cómo podemos llevarla a cabo. Estoy aquí para ayudarte a digitalizar tus procesos y optimizar tu gestión."
-      href="/contactme"
-      buttonTitle="Contáctame"
-    />
-  </section>
-</BaseLayout>
+  <CTA
+    title="¿Creés que una app podría ayudarte a trabajar mejor?"
+    description="Hablemos de tu idea y veamos cómo podemos llevarla a cabo. Estoy aquí para ayudarte a digitalizar tus procesos y optimizar tu gestión."
+    href="/contactme"
+    buttonTitle="Contáctame"
+  />
+  <RelatedServices exclude="/services/apps-web" />
+</ContainerPages>

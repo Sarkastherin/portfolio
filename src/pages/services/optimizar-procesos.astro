@@ -1,0 +1,44 @@
+---
+import ContainerPages from "../../components/ContainerPages.astro";
+import ImgAndText from "../../components/Sections/ImgAndText.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
+import CTA from "../../components/CTA.astro";
+
+const pageTitle = "Optimización de Proces";
+---
+
+<ContainerPages
+  pageTitle={pageTitle}
+  pageTitleComplete="Optimización de Procesos"
+  description="Detecto tareas repetitivas en la carga y gestión de datos, y las transformo en procesos simples, organizados y eficientes."
+  imgUrl={null}
+>
+  <ImgAndText
+    urlImg="/public/process.png"
+    altImg="mujer trabajando en un escritorio"
+    description={`
+    <p>
+    Muchas tareas administrativas giran en torno a la carga y el manejo de datos: copiar de un lugar a otro, revisar planillas, controlar información duplicada o incompleta.
+    </p>
+
+    <p>
+    Con un buen análisis del proceso, es posible identificar esos puntos de fricción y darles una solución más ordenada y eficiente.
+    </p>
+
+    <p>
+    Te ayudo a repensar cómo estás gestionando tus datos, para que el flujo de trabajo sea más claro, ágil y con menos errores.
+    </p>
+
+    <p>
+    A veces no hace falta una herramienta nueva, sino una forma más inteligente de usar las que ya tienes.
+    </p>`}
+  />
+
+  <CTA
+  title="Haz que tus procesos fluyan con eficiencia"
+  description="Optimiza tus procesos administrativos eliminando tareas repetitivas y consolidando la carga de datos en sistemas automatizados. Te ayudo a conectar tus fuentes y diseñar flujos más inteligentes para ahorrar tiempo y reducir errores."
+  href="/contactme"
+  buttonTitle="Quiero optimizar mis procesos"
+/>
+  <RelatedServices exclude="/services/optimizar-procesos" />
+</ContainerPages>

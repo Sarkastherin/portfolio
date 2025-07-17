@@ -1,0 +1,34 @@
+---
+import ContainerPages from "../../components/ContainerPages.astro";
+import ImgAndText from "../../components/Sections/ImgAndText.astro";
+import RelatedServices from "../../components/RelatedServices.astro";
+import CTA from "../../components/CTA.astro";
+
+const pageTitle = "Automatizaciones";
+---
+
+<ContainerPages
+  pageTitle={pageTitle}
+  pageTitleComplete="Automatizaciones con Google Workspace"
+  description="Conecta tus herramientas y deja que el trabajo repetitivo se haga solo. Formularios, hojas de cálculo y correos trabajando en sincronía."
+  imgUrl={null}
+>
+  <ImgAndText
+    urlImg="/public/worker-on-desk.png"
+    altImg="mujer trabajando en un escritorio"
+    description={`
+    <p>El famoso <em>copy-paste</em> sigue siendo parte del día a día en muchas oficinas. Estas tareas repetitivas consumen tiempo, energía y son propensas a errores.</p>
+    <p>Con <strong>Google Workspace y Apps Script</strong> es posible automatizar flujos completos de trabajo. Desde que se completa un formulario hasta que se genera un reporte o se envía un correo de confirmación.</p>
+    <p>Trabajo contigo para entender tu proceso y transformarlo en una secuencia automática, simple y eficiente.</p>
+    <p>Automatizar no es solo un lujo: es una forma de profesionalizar tu gestión, reducir errores y liberar tiempo.</p>
+`}
+  />
+
+  <CTA
+    title="Automatiza tus procesos con herramientas que ya usas todos los días."
+    description="Si sientes que siempre estás haciendo lo mismo —copiar, pegar, enviar correos, revisar planillas— es momento de dar el siguiente paso. Podemos crear una solución a medida para que tu trabajo y el de tu equipo fluya solo y sin errores."
+    href="/contactme"
+    buttonTitle="Quiero automatizar mi trabajo"
+  />
+  <RelatedServices exclude="/services/automatizacion" />
+</ContainerPages>

@@ -1,0 +1,13 @@
+---
+const {urlImg, altImg,description} = Astro.props;
+---
+<div class="grid md:grid-cols-2 gap-10 items-center -mt-10">
+  <img
+    src={urlImg}
+    alt={altImg}
+    class="w-full rounded-xl shadow-md"
+  />
+
+  <div class="space-y-4 text-base" set:html={description}>
+  </div>
+</div>

@@ -1,45 +1,39 @@
 ---
 // Datos ficticios para comenzar (pueden venir de un archivo o CMS más adelante)
 import SectionLayout from "../layouts/SectionLayout.astro";
+const sheetId = import.meta.env.PUBLIC_SHEET_ID;
+const apiKey = import.meta.env.PUBLIC_GOOGLE_API_KEY;
+const range = "Testimonios!A1:G";
+const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+const res = await fetch(url);
+const data = await res.json();
+type Testimonial = {
+  nombre_completo: string;
+  cargo_actual: string;
+  testimonio: string;
+};
 
-const testimonials = [
-  {
-    name: "Lucía R.",
-    role: "Coordinadora Administrativa",
-    quote:
-      "Trabajar con Katherin fue un cambio total. Automatizó tareas que hacíamos manualmente y nos ahorró horas cada semana.",
-    image: "/images/testimonio1.jpg", // imagen opcional
-  },
-  {
-    name: "Carlos M.",
-    role: "Emprendedor digital",
-    quote:
-      "Me ayudó a transformar mi hoja de cálculo en una app real. Profesional, clara y comprometida. La súper recomiendo.",
-    image: "/images/testimonio2.jpg",
-  },
-  {
-    name: "Andrea G.",
-    role: "Analista de datos",
-    quote:
-      "No solo resolvió lo técnico, también entendió perfectamente nuestro proceso. Una crack.",
-    image: "/images/testimonio3.jpg",
-  },
-];
+const header: string[] = data.values[0].map((col: string) => col.toLocaleLowerCase().replace(/\s+/g, "_"));
+const rows: Testimonial[] = data.values.slice(1).map((row: string[]) => {
+  const testimonial: Record<string, string> = {};
+  header.forEach((col, index) => {
+    testimonial[col] = row[index];
+  });
+  return testimonial as Testimonial;
+});
 ---
 
 <SectionLayout title="Testimonios">
   <div class="grid gap-8 md:grid-cols-3">
-      {testimonials.map((t, i) => (
+    {
+      rows.map((t, i) => (
         <div class="bg-white rounded-2xl shadow-md p-6 text-left relative">
-          <!-- Cita -->
           <p
             class="text-stone-700 text-sm leading-relaxed max-h-32 overflow-hidden transition-all duration-300"
             data-quote
           >
-            "{t.quote}"
+            "{t.testimonio}"
           </p>
-
-          <!-- Botón -->
           <button
             type="button"
             class="text-rose-500 text-sm font-medium mt-2"
@@ -47,15 +41,14 @@ const testimonials = [
           >
             Ver más →
           </button>
-
-          <!-- Autor -->
           <div class="mt-4">
-            <p class="font-semibold text-stone-800">{t.name}</p>
-            <p class="text-xs text-stone-500">{t.role}</p>
+            <p class="font-semibold text-stone-800">{t.nombre_completo}</p>
+            <p class="text-xs text-stone-500">{t.cargo_actual}</p>
           </div>
         </div>
-      ))}
-    </div>
+      ))
+    }
+  </div>
 </SectionLayout>
 <!-- JS para el toggle -->
 <script>

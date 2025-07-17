@@ -1,0 +1,49 @@
+---
+const { frontmatter } = Astro.props;
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CardWithTitle from "../components/CardWithTitle.astro";
+import Screenshots from "../components/ProjectSSComponent.tsx"
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <div class="max-w-3xl mx-auto flex flex-col gap-10 pt-20">
+    <!-- Subheader -->
+    <section class="overflow-hidden rounded-lg shadow-sm">
+      <div class="h-76 overflow-hidden">
+        <img alt={frontmatter.image.alt} src={frontmatter.image.url} />
+      </div>
+
+      <div class="bg-white p-4 sm:p-6">
+        <time datetime="2022-10-10" class="block text-xs text-stone-600">
+          {frontmatter.pubDate.toString().slice(0, 10)}
+        </time>
+        <h2 class="mt-0.5 text-2xl font-bold text-rose-500">
+          {frontmatter.title}
+        </h2>
+
+        <p class="mt-2 line-clamp-3 text-md/relaxed text-stone-600">
+          {frontmatter.description}
+        </p>
+      </div>
+    </section>
+    <CardWithTitle
+      title="📑 Resumen del Proyecto"
+      paragraph={frontmatter.resumen}
+    />
+    <CardWithTitle
+      title="🕵🏻‍♀️ Problema Identificado"
+      paragraph={frontmatter.problems.paragraph}
+      list={frontmatter.problems.list}
+    />
+    <CardWithTitle
+      title="🧩 Solución Desarrollada"
+      paragraph={frontmatter.solution.paragraph}
+      list={frontmatter.solution.list}
+    />
+    <CardWithTitle
+      title="🤖 Tecnologías Utilizadas"
+      badge={frontmatter.tech}
+    />
+    <Screenshots client:load screenshots={frontmatter.screenshots} />    
+  </div>
+</BaseLayout>

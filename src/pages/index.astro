@@ -11,7 +11,7 @@ const pageTitle = "Página de inicio";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <HeroSection />
+  <HeroSection  client:load/>
   <Services />
   <StartProjects />
   <AboutMe />
@@ -19,7 +19,7 @@ const pageTitle = "Página de inicio";
   <CTA
     title="¿Tienes una idea o proceso que querés digitalizar?"
     description="Estoy acá para ayudarte a hacerlo realidad."
-    href="/cotactme"
+    href="/contactme"
     buttonTitle="Contáctame"
   />
 </BaseLayout>

@@ -5,5 +5,40 @@ const pageTitle = "Contacto";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>Aquí es donde publicaré mis Contacto";.</p>
+  <section class="max-w-2xl mx-auto px-4 py-16 text-center">
+    <h1 class="text-3xl font-bold text-rose-500 mb-4">¿Hablamos?</h1>
+    <p class="text-stone-700 text-lg mb-8">
+      Si algo de lo que viste aquí resuena contigo, <strong
+        >me encantará saber de ti</strong
+      >. Puedes escribirme por los canales que más uses.
+    </p>
+
+    <div class="flex flex-col sm:flex-row justify-center gap-4 text-stone-800 font-semibold">
+      <a
+        href="https://wa.me/3435263931?text=Hola%20Katherin!%20Visité%20tu%20portfolio%20y%20quiero%20saber%20más%20sobre%20tus%20servicios.
+"
+        target="_blank"
+        rel="noopener"
+        class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-2xl shadow transition"
+      >
+        📱 WhatsApp
+      </a>
+
+      <a
+        href="mailto:kathejudith@gmail.com"
+        class="bg-rose-500 hover:bg-rose-600 text-white px-6 py-3 rounded-2xl shadow transition"
+      >
+        ✉️ Correo
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/katherin-guerrero/"
+        target="_blank"
+        rel="noopener"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl shadow transition"
+      >
+        💼 LinkedIn
+      </a>
+    </div>
+  </section>
 </BaseLayout>
