@@ -6,7 +6,7 @@ const postModules = import.meta.glob("../pages/posts/*.md", { eager: true });
 const allPosts = Object.entries(postModules).map(
   ([path, mod]: [string, any]) => ({
     ...mod,
-    url: path.replace("../pages", "").replace(".md", "").replace("/index", "/"), // opcional, si usas index.md
+    url: "/" + path.replace("../pages", "").replace(".md", "").replace("/index", "/"),
   })
 );
 const pageTitle = "Blog";
