@@ -131,7 +131,7 @@ Este proceso es ideal si estás comenzando a digitalizar registros, especialment
 
 🎁 En el link de abajo te dejo acceso a los archivos en **Google Drive**
 
-👉 [Acceder a los acrhivos](https://drive.google.com/drive/folders/1PO-pO0IE7_asP-uWmiRzLw-4p3wyQTiG?usp=drive_linkk)
+👉 [Acceder a los archivos](https://drive.google.com/drive/folders/1PO-pO0IE7_asP-uWmiRzLw-4p3wyQTiG?usp=drive_linkk)
 
 💌 Incluye:
 - Formulario de Google listo para usar
