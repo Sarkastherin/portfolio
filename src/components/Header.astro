@@ -1,6 +1,7 @@
 ---
 import NavLink from "./NavLink.astro";
 import ButtonNav from "./ButtonNav.astro";
+import "../../public/styles/global.css";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -52,49 +53,38 @@ const currentPath = Astro.url.pathname;
               title="Sobre mí"
               active={currentPath === "/about"}
             />
-            <div class="hidden">
-              <NavLink
-                href="/blog"
-                title="Blog"
-                active={currentPath === "/blog"}
-              />
-              <NavLink
-                href="/downloads"
-                title="Descargas"
-                active={currentPath === "/downloads"}
-              />
-            </div>
+            <NavLink
+              href="/blog"
+              title="Blog"
+              active={currentPath === "/blog"}
+            />
           </ul>
           <ButtonNav href="/contactme" title="Contáctame" />
         </nav>
       </div>
       <!-- Menú móvil -->
-      
     </div>
-    <nav id="mobile-menu" class="hidden md:hidden absolute right-0 bg-stone-200 rounded-bl-lg border-b border-l border-stone-300 px-4 pb-4">
-        <ul class="flex flex-col gap-4 text-sm">
-          <NavLink href="/" title="Inicio" active={currentPath === "/"} />
-          <NavLink
-            href="/services"
-            title="Servicios"
-            active={currentPath === "/services"}
-          />
-          <NavLink
-            href="/about"
-            title="Sobre mí"
-            active={currentPath === "/about"}
-          />
-          <NavLink href="/blog" title="Blog" active={currentPath === "/blog"} />
-          <NavLink
-            href="/downloads"
-            title="Descargas"
-            active={currentPath === "/downloads"}
-          />
-          <ButtonNav href="/contactme" title="Contáctame" />
-        </ul>
-      </nav>
+    <nav
+      id="mobile-menu"
+      class="hidden md:hidden absolute right-0 bg-stone-200 rounded-bl-lg border-b border-l border-stone-300 px-4 pb-4"
+    >
+      <ul class="flex flex-col gap-4 text-sm">
+        <NavLink href="/" title="Inicio" active={currentPath === "/"} />
+        <NavLink
+          href="/services"
+          title="Servicios"
+          active={currentPath === "/services"}
+        />
+        <NavLink
+          href="/about"
+          title="Sobre mí"
+          active={currentPath === "/about"}
+        />
+        <NavLink href="/blog" title="Blog" active={currentPath === "/blog"} />
+        <ButtonNav href="/contactme" title="Contáctame" />
+      </ul>
+    </nav>
   </div>
-  
 </header>
 <script type="module">
   const toggle = document.getElementById("menu-toggle");
@@ -104,6 +94,5 @@ const currentPath = Astro.url.pathname;
     menu.classList.toggle("hidden");
   });
 </script>
-
 
 <!-- hidden md:hidden -->

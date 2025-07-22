@@ -18,8 +18,6 @@ export default function Screenshots({
   function openModal(index: number) {
     setActiveIndex(index);
     setIsOpen(true);
-
-
   }
 
   function closeModal() {

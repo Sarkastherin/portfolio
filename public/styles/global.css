@@ -1,3 +1,9 @@
-@import "tailwindcss";
+/* El archivo base.css inyectado por defecto de la integración */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Tailwind directives removed because the build tool does not recognize @tailwind. 
+   If you intend to use Tailwind, set up PostCSS with the Tailwind plugin. */
+
 
 /* Use Tailwind's dark mode by adding 'dark:' variants in your classes or set 'dark' mode in tailwind.config.js */

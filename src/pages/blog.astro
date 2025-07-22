@@ -1,7 +1,7 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
-const postModules = import.meta.glob("../pages/posts/*.md", {eager: true});
+import ContainerPages from "../components/ContainerPages.astro";
+const postModules = import.meta.glob("../pages/posts/*.md", { eager: true });
 // Convertir a array usable
 const allPosts = Object.entries(postModules).map(
   ([path, mod]: [string, any]) => ({
@@ -12,13 +12,22 @@ const allPosts = Object.entries(postModules).map(
 const pageTitle = "Blog";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <p>Aquí es donde publicaré acerca de mi viaje aprendiendo Astro.</p>
-  <ul>
+<ContainerPages
+  pageTitle={pageTitle}
+  pageTitleComplete="Bienvenido a mi Blog"
+  description="Aquí encontrarás artículos sobre Automatizaciones, Herramientas de Google, y más."
+>
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
     {
       allPosts.map((post) => (
-        <BlogPost url={post.url}  title={post.frontmatter.title}/>
+        <BlogPost
+          url={post.url}
+          title={post.frontmatter.title}
+          imgURL={post.frontmatter.img.url}
+          description={post.frontmatter.description}
+          imgAlt={post.frontmatter.img.alt || "Imagen del post"}
+        />
       ))
     }
-  </ul>
-</BaseLayout>
+  </div>
+</ContainerPages>
