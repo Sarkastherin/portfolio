@@ -137,4 +137,3 @@ Este proceso es ideal si estás comenzando a digitalizar registros, especialment
 - Formulario de Google listo para usar
 - Hoja de cálculo conectada
 - Script básico cargado y comentado - *está dentro de la Hoja de Cálculo*
-

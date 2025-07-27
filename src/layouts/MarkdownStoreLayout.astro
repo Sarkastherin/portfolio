@@ -1,0 +1,117 @@
+---
+import { FaExternalLinkAlt } from "react-icons/fa";
+import Badge from "../components/Badge.astro";
+import { PiCoffeeDuotone } from "react-icons/pi";
+import ButtonNav from "../components/ButtonNav.astro";
+import Screenshots from "../components/ProjectSSComponent";
+//MarkdownPostLayout.astro
+const { frontmatter } = Astro.props;
+import BaseLayout from "./BaseLayout.astro";
+
+const pageTitle = frontmatter.title || "Kathe's Blog";
+const url = Astro.url.href || "https://your-default-url.com";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <article
+    class="prose prose-stone max-w-3xl bg-white px-4 py-8 mx-auto rounded-lg shadow-sm mt-8"
+  >
+    <!-- 🏷️ Etiquetas SEO -->
+    <header class="mb-6">
+      <h1 class="text-3xl font-bold text-stone-900 mb-2">
+        {frontmatter.title}
+      </h1>
+      <p>{frontmatter.description}</p>
+      {
+        frontmatter.subtitle && (
+          <p class="text-lg text-stone-700">{frontmatter.subtitle}</p>
+        )
+      }
+      {
+        frontmatter.tags && (
+          <div class="flex flex-wrap gap-2 my-4">
+            {frontmatter.tags.map((tag: string) => (
+              <span class="bg-stone-100 text-stone-700 px-2 py-1 text-sm rounded">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )
+      }
+      {
+        frontmatter.img && (
+          <img
+            src={frontmatter.img.url}
+            alt={frontmatter.img.alt || frontmatter.title}
+            class="w-full h-auto rounded-lg mt-4"
+          />
+        )
+      }
+      <div
+        class="flex justify-between items-center bg-blue-100 px-4 py-2 rounded-md"
+      >
+        <Badge type={frontmatter.price.type} />
+        <a
+          class="cursor-pointer no-underline group relative inline-block text-sm font-medium text-white focus:ring-3 focus:outline-hidden"
+          href={frontmatter.cta.link}
+        >
+          <span
+            class="absolute inset-0 border rounded border-blue-600"
+          ></span>
+          <span
+            class="flex items-center gap-2 rounded border border-blue-600 bg-blue-600 px-8 py-2 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1"
+          >
+            Descargar{" "}
+            <FaExternalLinkAlt />
+          </span>
+        </a>
+      </div>
+    </header>
+
+    <!-- ✍️ Contenido principal -->
+    <section class="">
+      <slot />
+    </section>
+
+
+    <!-- 🔗 Links relacionados o llamadas a la acción -->
+    <footer class="mt-12 border-t pt-6 text-sm text-stone-500">
+      <p>
+        🚀 ¡Más productos pronto disponibles en esta sección! <a
+          href="/store"
+          class="text-rose-600 hover:underline">Tienda</a
+        >.
+      </p>
+    </footer>
+  </article>
+  <div
+    class="hidden lg:block fixed top-40 right-6 z-50 bg-white px-4 py-4 rounded-md w-56 text-center shadow-lg animate-fade-in"
+  >
+    <p class="text-sm text-rose-500 font-medium">
+      Si gustas, puedes apoyar mi contenido con un cafecito ☕
+    </p>
+    <a
+      href="https://cafecito.app/katherin-guerrero"
+      rel="noopener"
+      target="_blank"
+    >
+      <img
+        srcset="https://cdn.cafecito.app/imgs/buttons/button_5.png 1x, https://cdn.cafecito.app/imgs/buttons/button_5x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_5_3.75x.png 3.75x"
+        src="https://cdn.cafecito.app/imgs/buttons/button_5.png"
+        alt="Invitame un café en cafecito.app"
+        class="my-2 mx-auto"
+      />
+    </a>
+  </div>
+  <div class="fixed bottom-6 right-6 z-50 lg:hidden">
+    <a
+      href="https://cafecito.app/katherin-guerrero"
+      target="_blank"
+      rel="noopener"
+      class="inline-block rounded-full border border-rose-500 bg-rose-500 p-3 text-white hover:bg-transparent hover:text-rose-500 focus:ring-3 focus:outline-hidden"
+      title="Invitame un café ☕"
+    >
+      <PiCoffeeDuotone />
+    </a>
+  </div>
+</BaseLayout>

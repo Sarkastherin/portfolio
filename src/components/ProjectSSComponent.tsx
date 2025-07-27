@@ -43,7 +43,7 @@ export default function Screenshots({
               <div
                 key={index}
                 className={`absolute inset-0 transition-opacity duration-700 ease-in-out  shadow border border-stone-200 ${
-                  index === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                  index === activeIndex ? "opacity-100" : "opacity-0"
                 }`}
               >
                 <img

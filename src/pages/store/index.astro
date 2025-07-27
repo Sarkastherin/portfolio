@@ -1,0 +1,66 @@
+---
+import { string } from "astro:schema";
+import ContainerPages from "../../components/ContainerPages.astro";
+const storeModules = import.meta.glob("./*.md", { eager: true });
+const allStore = Object.entries(storeModules).map(
+  ([path, mod]: [string, any]) => ({
+    ...mod,
+    url: "/store/" + path.replace("./", "").replace(".md", ""),
+  })
+);
+const pageTitle = "Tienda";
+---
+
+<ContainerPages
+  pageTitle={pageTitle}
+  pageTitleComplete="Productos Digitales para facilitar tu trabajo"
+  description="Herramientas simples, listas para usar, que te ahorran tiempo y te ayudan a trabajar mejor. Algunos son gratuitos para que los pruebes. Otros están pensados para cuando necesites ir un paso más allá."
+>
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+    {
+      allStore.map((store) => (
+        <div class="overflow-hidden">
+          <img
+            src={store.frontmatter.img.url}
+            alt=""
+            class="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+          />
+
+          <div class="border border-stone-100 bg-white p-6">
+            <p class="text-stone-700">
+              {store.frontmatter.price.mount.toLocaleString("es-AR", {
+                style: "currency",
+                currency: "ARS",
+              })}
+            </p>
+
+            <h3 class="mt-1.5 text-lg font-medium text-stone-900">
+              {store.frontmatter.title}
+            </h3>
+
+            <p class="mt-1.5 line-clamp-3 text-stone-700">
+              {store.frontmatter.description}
+            </p>
+
+            <div class="mt-4 flex gap-4 text-center">
+              <a
+                class="block w-full rounded-sm bg-stone-200/80 px-4 py-3 text-sm font-medium text-rose-500 transition hover:scale-105"
+                href={store.url}
+              >
+                Ver Producto
+              </a>
+
+              <a
+                type="button"
+                class="block w-full rounded-sm bg-rose-500 px-4 py-3 text-sm font-medium text-white transition hover:scale-105"
+                href={store.frontmatter.cta.link}
+              >
+                Obtener Ahora
+              </a>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</ContainerPages>

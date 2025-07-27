@@ -1,0 +1,42 @@
+---
+import { FaGift } from "react-icons/fa";
+import { MdPaid } from "react-icons/md";
+const { type } = Astro.props;
+---
+
+<div class="container">
+  <span class=`${type}`>
+    {type === "free" ?<FaGift /> :<MdPaid />}
+    
+
+    <p class="label">{type === "free" ?"Gratis" :"Pago"}</p>
+  </span>
+</div>
+<style>
+    .container {
+        max-width: 80px;
+        font-size: 14px;
+    }
+  .free {
+    display: flex;/*  */
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+    background-color: #8b5cf6;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    border-radius: 25px;
+  }
+  .paid {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    background-color: #f59e0b;
+    color: white;
+    font-weight: 600;
+    border-radius: 25px;
+  }
+</style>
