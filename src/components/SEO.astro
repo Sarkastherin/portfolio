@@ -1,0 +1,107 @@
+---
+export interface SEOProps {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  type?: 'website' | 'article' | 'profile';
+  keywords?: string[];
+  author?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  image = '/promming-girl.png',
+  type = 'website',
+  keywords = [],
+  author = 'Katherine - Desarrolladora Web Freelance',
+  publishedTime,
+  modifiedTime,
+} = Astro.props as SEOProps;
+
+const siteName = "Katherine Dev - Desarrolladora Web Freelance";
+const siteUrl = "https://portfolio-kathe.netlify.app";
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+const imageUrl = new URL(image, siteUrl).href;
+---
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+<meta name="author" content={author} />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="es_AR" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalUrl} />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+<meta name="twitter:creator" content="@katherine_dev" />
+
+<!-- Article specific (for blog posts) -->
+{type === 'article' && publishedTime && (
+  <>
+    <meta property="article:published_time" content={publishedTime} />
+    <meta property="article:author" content={author} />
+  </>
+)}
+{type === 'article' && modifiedTime && (
+  <meta property="article:modified_time" content={modifiedTime} />
+)}
+
+<!-- Robots -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": type === 'article' ? 'Article' : 'WebSite',
+  "name": fullTitle,
+  "description": description,
+  "url": canonicalUrl,
+  "image": imageUrl,
+  ...(type === 'website' ? {
+    "author": {
+      "@type": "Person",
+      "name": "Katherine",
+      "jobTitle": "Desarrolladora Web Freelance",
+      "url": siteUrl
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": siteName,
+      "url": siteUrl,
+      "logo": {
+        "@type": "ImageObject",
+        "url": new URL('/favicon-kathe.svg', siteUrl).href
+      }
+    }
+  } : {}),
+  ...(type === 'article' && publishedTime ? {
+    "datePublished": publishedTime,
+    "dateModified": modifiedTime || publishedTime,
+    "author": {
+      "@type": "Person", 
+      "name": author
+    }
+  } : {})
+})} />

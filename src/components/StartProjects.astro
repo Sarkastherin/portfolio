@@ -2,28 +2,84 @@
 import SectionLayout from "../layouts/SectionLayout.astro";
 import { badges } from "./CardWithTitle.astro";
 import { Image } from "astro:assets";
+import Badge from "./Badge.astro";
 // Cargar todos los proyectos de forma estática
-const projectModules = import.meta.glob("../pages/projects/*.md", {
-  eager: true,
-});
-
-// Convertir a array usable
-const allProjects = Object.entries(projectModules).map(
-  ([path, mod]: [string, any]) => ({
-    ...mod,
-    url: path.replace("../pages", "").replace(".md", "").replace("/index", "/"), // opcional, si usas index.md
-  })
-);
+type Projects = {
+  pubDate: string;
+  title: string;
+  description: string;
+  tech: (keyof typeof badges | string)[];
+  image: {
+    url: string;
+    alt: string;
+  };
+  url: string;
+};
+const projects: Projects[] = [
+  {
+    pubDate: "2025-12-11",
+    title: "Sistema de Gestión Empresarial - Carrocerías Borgert",
+    description:
+      "Una aplicación web para gestionar pedidos, en una fabrica de carrocerías",
+    tech: ["react", "vitejs", "tailwindcss"],
+    image: {
+      url: "/ss_proyectos/portadas/truckFlow_home.png",
+      alt: "Aplicación de Gestión de Tareas",
+    },
+    url: "/projects/erp-carrocerias-borgert",
+  },
+  {
+    pubDate: "2025-07-10",
+    title: "App de Cotizaciones y Oportunidades",
+    description:
+      "Simplificando la Gestión Comercial y Operativa para la Industria de la Construcción",
+    tech: ["react", "vitejs", "tailwindcss", "supabase", "postgresql"],
+    image: {
+      url: "/quotes-app-ss/portada.png",
+      alt: "App de Cotizaciones y Oportunidades",
+    },
+    url: "/projects/quotes-app",
+  },
+  {
+    pubDate: "2023-07-16",
+    title: "Sistema de Pedidos Técnicos para Planta de Producción",
+    description:
+      "Conectando Producción, Ingeniería y Planificación con una solución accesible y automatizada para la solicitud de piezas.",
+    tech: [
+      "google_apps_script",
+      "google_sheets",
+      "looker_studio",
+      "google_sites",
+    ],
+    image: {
+      url: "/order-management/portada.png",
+      alt: "Sistema de Pedidos Técnicos para Planta de Producción",
+    },
+    url: "/projects/order-management",
+  },
+  {
+    pubDate: "2024-12-15",
+    title: "Sitio Web Portafolio",
+    description:
+      "Mi sitio web personal para mostrar mis proyectos y habilidades como desarrolladora web.",
+    tech: ["astro", "tailwindcss"],
+    image: {
+      url: "/ss_proyectos/portadas/portfolio_website.png",
+      alt: "Sitio Web Portafolio",
+    },
+    url: "/projects/portfolio-website",
+  },
+];
 ---
 
 <SectionLayout title="Proyectos"
   ><div class="grid gap-8 md:grid-cols-2 text-start">
     {
-      allProjects.map((project) => (
+      projects.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()).map((project) => (
         <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
           <Image
-            src={project.frontmatter.image.url}
-            alt={project.frontmatter.image?.alt}
+            src={project.image.url}
+            alt={project.image.alt}
             class="w-full h-48 object-cover"
             width={600}
             height={300}
@@ -31,16 +87,14 @@ const allProjects = Object.entries(projectModules).map(
 
           <div class="p-6">
             <h3 class="text-xl font-semibold text-stone-800 mb-2">
-              {project.frontmatter.title}
+              {project.title}
             </h3>
-            <p class="text-sm text-stone-600 mb-4">
-              {project.frontmatter.description}
-            </p>
+            <p class="text-sm text-stone-600 mb-4">{project.description}</p>
 
             <ul class="flex flex-wrap gap-2 text-xs text-stone-500 mb-4">
-              {project.frontmatter.tech.map((tool: keyof typeof badges) => (
-                <li class="bg-stone-200 px-2 py-1 rounded-full">
-                  {badges[tool].name}
+              {project.tech.map((tech) => (
+                <li>
+                  <Badge label={tech} />
                 </li>
               ))}
             </ul>

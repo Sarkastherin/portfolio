@@ -1,0 +1,396 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Cards from "../../components/Cards.astro";
+import Badge, { variants } from "../../components/Badge.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import {
+  LuCircleCheckBig,
+  LuWorkflow,
+  LuFileText,
+  LuUsers,
+  LuShield,
+  LuSettings,
+  LuMonitor,
+  LuPalette,
+  LuZap,
+  LuSearch,
+  LuSmartphone,
+  LuCode,
+} from "react-icons/lu";
+
+const pageTitle = "Portfolio Website - Proyecto Personal";
+const description = "Desarrollo de mi portafolio personal profesional usando Astro, TypeScript y Tailwind CSS. Caso de estudio completo con performance 100/100, SEO optimizado y arquitectura moderna.";
+const keywords = [
+  "portfolio desarrollador",
+  "astro framework",
+  "typescript portfolio",
+  "tailwind css",
+  "static site generation",
+  "seo optimizado",
+  "performance web",
+  "caso de estudio",
+  "lighthouse 100",
+  "desarrollo web"
+];
+
+const problemasResueltos = [
+  {
+    icon: LuCircleCheckBig,
+    titulo: "Presencia profesional online",
+    descripcion: "Sitio web moderno que refleja habilidades técnicas y experiencia",
+  },
+  {
+    icon: LuWorkflow,
+    titulo: "Showcase de proyectos interactivo",
+    descripcion: "Presentación visual atractiva de casos de éxito y tecnologías",
+  },
+  {
+    icon: LuFileText,
+    titulo: "Blog técnico integrado",
+    descripcion: "Plataforma para compartir conocimientos y experiencias",
+  },
+  {
+    icon: LuUsers,
+    titulo: "Contacto directo con clientes",
+    descripcion: "Formularios integrados y múltiples canales de comunicación",
+  },
+  {
+    icon: LuZap,
+    titulo: "Performance optimizada",
+    descripcion: "Carga ultrarrápida y excelente experiencia de usuario",
+  },
+];
+
+const tecnologias = [
+  { nombre: "astro", categoria: "Frontend" },
+  { nombre: "typescript", categoria: "Frontend" },
+  { nombre: "tailwindcss", categoria: "Frontend" },
+  { nombre: "react", categoria: "Frontend" },
+  { nombre: "markdown", categoria: "Content" },
+  { nombre: "rss", categoria: "Content" },
+  { nombre: "google_forms", categoria: "Backend" },
+  { nombre: "vercel", categoria: "Deploy" },
+];
+
+const caracteristicas = [
+  {
+    icon: LuMonitor,
+    titulo: "Static Site Generation (SSG)",
+    descripcion: "Generación estática para máximo rendimiento y SEO optimizado",
+  },
+  {
+    icon: LuPalette,
+    titulo: "Sistema de Diseño Coherente",
+    descripcion: "Componentes reutilizables con Tailwind CSS y design tokens",
+  },
+  {
+    icon: LuCode,
+    titulo: "Arquitectura de Componentes",
+    descripcion: "Astro Islands para componentes interactivos optimizados",
+  },
+  {
+    icon: LuSmartphone,
+    titulo: "Mobile-First Responsive",
+    descripcion: "Experiencia perfecta en todos los dispositivos y tamaños",
+  },
+  {
+    icon: LuSearch,
+    titulo: "SEO y Accessibility",
+    descripcion: "Optimizado para motores de búsqueda y accesibilidad web",
+  },
+];
+
+const metricas = [
+  {
+    titulo: "Performance Score",
+    valor: "100/100",
+    descripcion: "Lighthouse Performance",
+    color: "green",
+  },
+  {
+    titulo: "SEO Score",
+    valor: "100/100",
+    descripcion: "Lighthouse SEO",
+    color: "blue",
+  },
+  {
+    titulo: "Accessibility",
+    valor: "100/100",
+    descripcion: "WCAG 2.1 AA Compliant",
+    color: "purple",
+  },
+  {
+    titulo: "Load Time",
+    valor: "<1s",
+    descripcion: "First Contentful Paint",
+    color: "orange",
+  },
+];
+
+const capturas: { url: string; alt: string }[] = [];
+---
+
+<BaseLayout 
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  type="article"
+  publishedTime="2025-12-12T00:00:00Z"
+  modifiedTime="2025-12-12T00:00:00Z"
+>
+  <div class="mt-10 max-w-4xl flex flex-col gap-6 mx-auto">
+    <!-- Breadcrumbs -->
+    <Breadcrumbs 
+      items={[
+        { label: "Proyectos", href: "/#projects" },
+        { label: "Portfolio Website", href: "/projects/portfolio-website" }
+      ]} 
+    />
+    <Cards title="📋 Descripción del Proyecto">
+      <p class="text-stone-600 text-lg leading-relaxed">
+        <strong>Desarrollo de mi portafolio personal profesional</strong> utilizando tecnologías modernas y best practices. 
+        Este proyecto representa mi identidad digital como desarrollador, showcaseando proyectos, habilidades técnicas y 
+        experiencia profesional. El objetivo principal fue crear una plataforma que demuestre capacidades técnicas mientras 
+        proporciona una excelente experiencia de usuario y performance optimizada.
+      </p>
+    </Cards>
+
+    <Cards title="🎯 Problemas Resueltos">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {
+          problemasResueltos.map((problema) => (
+            <div class="bg-white p-6 rounded-lg border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="p-2 bg-blue-100 rounded-lg">
+                  <problema.icon className="w-5 h-5 text-blue-600" />
+                </div>
+                <h3 class="font-semibold text-stone-800">{problema.titulo}</h3>
+              </div>
+              <p class="text-stone-600 text-sm">{problema.descripcion}</p>
+            </div>
+          ))
+        }
+      </div>
+    </Cards>
+
+    <Cards title="🛠️ Stack Tecnológico">
+      <div class="flex flex-wrap gap-2">
+        {
+          tecnologias.map((tech) => (
+            <Badge label={tech.nombre as keyof typeof variants} />
+          ))
+        }
+      </div>
+    </Cards>
+
+    <Cards title="🏗️ Arquitectura y Características">
+      <div class="grid md:grid-cols-1 gap-6">
+        {
+          caracteristicas.map((caracteristica) => (
+            <div class="bg-gradient-to-r from-slate-50 to-blue-50 rounded-lg p-6 border border-blue-200">
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-blue-100 rounded-lg flex-shrink-0">
+                  <caracteristica.icon className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-slate-800 mb-2">
+                    {caracteristica.titulo}
+                  </h3>
+                  <p class="text-slate-600">{caracteristica.descripcion}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </Cards>
+
+    <Cards title="📊 Performance y Métricas">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {
+          metricas.map((metrica) => (
+            <div class={`bg-gradient-to-br ${
+              metrica.color === 'green' ? 'from-green-50 to-emerald-100 border-green-200' :
+              metrica.color === 'blue' ? 'from-blue-50 to-cyan-100 border-blue-200' :
+              metrica.color === 'purple' ? 'from-purple-50 to-violet-100 border-purple-200' :
+              'from-orange-50 to-yellow-100 border-orange-200'
+            } rounded-lg p-6 border text-center`}>
+              <h3 class={`text-3xl font-bold mb-2 ${
+                metrica.color === 'green' ? 'text-green-700' :
+                metrica.color === 'blue' ? 'text-blue-700' :
+                metrica.color === 'purple' ? 'text-purple-700' :
+                'text-orange-700'
+              }`}>
+                {metrica.valor}
+              </h3>
+              <h4 class="font-semibold text-slate-700 mb-1">{metrica.titulo}</h4>
+              <p class="text-sm text-slate-600">{metrica.descripcion}</p>
+            </div>
+          ))
+        }
+      </div>
+    </Cards>
+
+    <Cards title="🔧 Proceso de Desarrollo">
+      <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-6 border border-indigo-200">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-xl font-semibold text-indigo-700 mb-4">
+              Planificación y Diseño
+            </h4>
+            <p class="text-slate-600 mb-4">
+              Desarrollo basado en investigación de UX, análisis de competencia y 
+              definición clara de objetivos de negocio y técnicos.
+            </p>
+            <ul class="space-y-2 text-slate-700 text-sm">
+              <li>• <strong>Research</strong> de portfolios exitosos en la industria</li>
+              <li>• <strong>Wireframing</strong> y prototipado de interfaz</li>
+              <li>• <strong>Sistema de diseño</strong> y guía de estilos</li>
+              <li>• <strong>Definición técnica</strong> y stack de tecnologías</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-purple-700 mb-4">
+              Implementación y Optimización
+            </h4>
+            <p class="text-slate-600 mb-4">
+              Desarrollo iterativo con foco en performance, accesibilidad y 
+              experiencia de usuario excepcional.
+            </p>
+            <div class="bg-white rounded-lg p-4 border border-purple-200">
+              <div class="text-center space-y-3">
+                <div class="flex items-center justify-center">
+                  <div class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-lg text-sm font-medium">
+                    Setup & Configuración
+                  </div>
+                </div>
+                <div class="text-gray-400">↓</div>
+                <div class="bg-blue-100 text-blue-700 px-3 py-1 rounded-lg text-sm font-medium">
+                  Desarrollo de Componentes
+                </div>
+                <div class="text-gray-400">↓</div>
+                <div class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium">
+                  Content Management
+                </div>
+                <div class="text-gray-400">↓</div>
+                <div class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">
+                  Testing & Deploy
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Cards>
+
+    <Cards title="📸 Capturas de pantalla">
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center">
+        <div class="text-yellow-600 mb-2">
+          <LuFileText className="w-12 h-12 mx-auto mb-3" />
+        </div>
+        <h3 class="text-lg font-semibold text-yellow-800 mb-2">Screenshots en proceso</h3>
+        <p class="text-yellow-700">
+          Las capturas de pantalla se agregarán próximamente mostrando:
+        </p>
+        <ul class="text-sm text-yellow-600 mt-3 space-y-1">
+          <li>• Homepage con hero section y navegación</li>
+          <li>• Vista de proyectos responsive</li>
+          <li>• Blog section y posts individuales</li>
+          <li>• Formulario de contacto funcional</li>
+          <li>• Mobile responsiveness</li>
+          <li>• Lighthouse performance scores</li>
+        </ul>
+      </div>
+    </Cards>
+
+    <Cards title="💡 Aspectos Técnicos Destacables">
+      <div class="grid md:grid-cols-2 gap-4">
+        <ul class="space-y-2 text-stone-600">
+          <li>
+            • <strong>Astro Static Site Generation</strong> para máximo performance
+          </li>
+          <li>
+            • <strong>TypeScript</strong> para type safety y mejor DX
+          </li>
+          <li>
+            • <strong>Component-based architecture</strong> reutilizable
+          </li>
+          <li>
+            • <strong>Tailwind CSS</strong> con design system personalizado
+          </li>
+          <li>
+            • <strong>Markdown content management</strong> para blog y proyectos
+          </li>
+        </ul>
+        <ul class="space-y-2 text-stone-600">
+          <li>
+            • <strong>SEO optimizado</strong> con meta tags dinámicos
+          </li>
+          <li>
+            • <strong>RSS feed</strong> automatizado para el blog
+          </li>
+          <li>
+            • <strong>Responsive design</strong> mobile-first
+          </li>
+          <li>
+            • <strong>Performance optimizations</strong> (lazy loading, image optimization)
+          </li>
+          <li>
+            • <strong>Accessibility compliance</strong> WCAG 2.1 AA
+          </li>
+        </ul>
+      </div>
+    </Cards>
+
+    <Cards title="🚀 Resultados e Impacto">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-xl font-semibold text-blue-600 mb-4">
+            Beneficios Profesionales
+          </h4>
+          <ul class="space-y-2 text-stone-600">
+            <li>
+              • <strong>Presencia digital profesional</strong> que refleja habilidades técnicas
+            </li>
+            <li>
+              • <strong>Showcase efectivo</strong> de proyectos y experiencia
+            </li>
+            <li>
+              • <strong>Canal directo de contacto</strong> con potenciales clientes
+            </li>
+            <li>
+              • <strong>Plataforma de content marketing</strong> técnico
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold text-green-600 mb-4">
+            Beneficios Técnicos
+          </h4>
+          <ul class="space-y-2 text-stone-600">
+            <li>
+              • <strong>Performance excepcional</strong> (Lighthouse 100/100)
+            </li>
+            <li>
+              • <strong>SEO optimizado</strong> para mayor visibilidad
+            </li>
+            <li>
+              • <strong>Escalabilidad</strong> para contenido futuro
+            </li>
+            <li>
+              • <strong>Mantenimiento simplificado</strong> con Markdown
+            </li>
+          </ul>
+        </div>
+      </div>
+    </Cards>
+
+    <div class="text-center py-8">
+      <p class="text-lg italic text-stone-600">
+        Este portafolio representa mi identidad digital como desarrollador full-stack, 
+        demostrando no solo habilidades técnicas sino también atención al detalle, 
+        UX/UI design y best practices de desarrollo web moderno.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,21 +1,70 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import SEO from "../components/SEO.astro";
 import "../../public/styles/global.css";
-const { pageTitle } = Astro.props;
+
+export interface Props {
+  pageTitle: string;
+  description?: string;
+  keywords?: string[];
+  image?: string;
+  type?: 'website' | 'article' | 'profile';
+  canonical?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+}
+
+const { 
+  pageTitle, 
+  description = "Desarrolladora web freelance especializada en aplicaciones modernas, automatización de procesos y soluciones digitales personalizadas. React, TypeScript, Astro y más.",
+  keywords = ["desarrolladora web", "freelance", "react", "typescript", "astro", "automatización", "aplicaciones web", "argentina"],
+  image,
+  type = 'website',
+  canonical,
+  publishedTime,
+  modifiedTime
+} = Astro.props;
 ---
 
-<html lang="en" data-theme="ligth">
+<html lang="es" data-theme="ligth">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon-kathe.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4946191620002525"
-     crossorigin="anonymous"></script>
+    
+    <!-- SEO Component -->
+    <SEO 
+      title={pageTitle}
+      description={description}
+      keywords={keywords}
+      image={image}
+      type={type}
+      canonical={canonical}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+    />
+    
+    <!-- DNS Prefetch for performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Honk:MORF@15&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Google AdSense -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4946191620002525"
+      crossorigin="anonymous"></script>
   </head>
-  <body class="bg-stone-100 text-stone-800 min-h-screen w-full">
+  <body class="bg-stone-100 text-stone-800 min-h-screen w-full font-nunito">
     <Header />
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 pb-32 max-w-6xl">
       <slot />

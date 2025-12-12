@@ -1,0 +1,414 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Cards from "../../components/Cards.astro";
+import Badge, { variants } from "../../components/Badge.astro";
+import {
+  LuCircleCheckBig,
+  LuWorkflow,
+  LuFileText,
+  LuUsers,
+  LuShield,
+  LuSettings,
+} from "react-icons/lu";
+
+const pageTitle = "ERP-Borgert";
+const problemasResueltos = [
+  {
+    icon: LuCircleCheckBig,
+    titulo: "Fuente única de verdad",
+    descripcion: "Sistema centralizado que elimina la duplicación de datos",
+  },
+  {
+    icon: LuWorkflow,
+    titulo: "Flujo de trabajo automatizado",
+    descripcion: "Proceso digital completo desde pedido hasta entrega",
+  },
+  {
+    icon: LuFileText,
+    titulo: "Trazabilidad completa",
+    descripcion: "Seguimiento en tiempo real del estado de cada pedido",
+  },
+  {
+    icon: LuUsers,
+    titulo: "Gestión unificada de clientes",
+    descripcion: "Base de datos centralizada con validaciones automáticas",
+  },
+  {
+    icon: LuShield,
+    titulo: "Reducción de errores",
+    descripcion: "Validaciones automáticas y formularios inteligentes",
+  },
+];
+const tecnologias = [
+  {
+    nombre: "react_router_7",
+    categoria: "Frontend",
+  },
+  { nombre: "typescript", categoria: "Frontend" },
+  { nombre: "tailwindcss", categoria: "Frontend" },
+  {
+    nombre: "google_sheets",
+    categoria: "Backend",
+  },
+  {
+    nombre: "google_drive",
+    categoria: "Backend",
+  },
+  { nombre: "google_oauth", categoria: "Backend" },
+  {
+    nombre: "api_georef_argentina",
+    categoria: "Integración",
+  },
+  {
+    nombre: "validacion_cuit",
+    categoria: "Integración",
+  },
+];
+const modulos = [
+  {
+    icon: LuShield,
+    titulo: "Autenticación y Seguridad",
+    descripcion: "Login con Google OAuth, sesiones seguras y control de acceso",
+  },
+  {
+    icon: LuFileText,
+    titulo: "Gestión de Pedidos",
+    descripcion:
+      "Core del sistema con 7 secciones integradas: Pedido, Camión, Carrocería, Trabajo en chasis, Datos de colocación, Órdenes de trabajo, Controles de calidad",
+  },
+  {
+    icon: LuUsers,
+    titulo: "Gestión de Clientes",
+    descripcion:
+      "CRUD completo con validación de CUIT, prevención de duplicados e integración con Georef Argentina",
+  },
+  {
+    icon: LuSettings,
+    titulo: "Sistema de Parámetros",
+    descripcion:
+      "Configuración flexible de colores, tipos de carrocería, personal e ítems de control",
+  },
+];
+const capturasSugeridas = [
+  "Dashboard Principal - Arquitectura modular", //✅
+  "Gestión de Clientes - Validaciones automáticas", //✅
+  "Formulario de Cliente - APIs externas", //✅
+  "Parámetros/Configuración - Escalabilidad", //✅
+  "Vista Responsive - Adaptabilidad", //✅
+  "Autenticación Google - Integración profesional", //✅
+];
+const capturas = [
+  {
+    url: "/ss_proyectos/screenshots/dashboard_principal.png",
+    alt: "Dashboard Principal - Arquitectura modular",
+  },
+  {
+    url: "/ss_proyectos/screenshots/validacion_cuit.png",
+    alt: "Gestión de Clientes - Validaciones automáticas",
+  },
+  {
+    url: "/ss_proyectos/videos/georeferncia.mp4",
+    alt: "Formulario de Cliente - APIs externas GeoRefer Argentina",
+  },
+  {
+    url: "/ss_proyectos/screenshots/responsive.png",
+    alt: "Vista Responsive - Adaptabilidad",
+  },
+  {
+    url: "/ss_proyectos/videos/oauth_google.mp4",
+    alt: "Autenticación Google - Integración profesional",
+  },
+];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="mt-10 max-w-4xl flex flex-col gap-6 mx-auto">
+    <Cards title="📋 Descripción del Proyecto">
+      <p class="text-stone-600 text-lg leading-relaxed">
+        <strong
+          >Desarrollo de un sistema ERP personalizado para Borgert Argentina,
+          una</strong
+        >
+        empresa líder en la fabricación de sistemas de cerramientos y fachadas. El
+        objetivo principal del proyecto fue digitalizar y automatizar los procesos
+        internos de la empresa, mejorando la eficiencia operativa y reduciendo errores
+        humanos.
+      </p>
+    </Cards>
+    <Cards title="🎯 Problema Resuelto">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-xl font-semibold text-red-600 mb-4">
+            Situación Inicial:
+          </h4>
+          <ul class="space-y-2 text-stone-700">
+            <li>• Duplicación manual de información</li>
+            <li>• Alta probabilidad de errores</li>
+            <li>• Falta de trazabilidad</li>
+            <li>• Gestión dispersa de clientes</li>
+            <li>• Procesos ineficientes</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold text-green-600 mb-4">
+            Solución Implementada:
+          </h4>
+          <div class="space-y-3">
+            {
+              problemasResueltos.map((item) => (
+                <div class="flex items-start gap-3">
+                  <item.icon className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <span class="font-semibold text-stone-800">
+                      {item.titulo}
+                    </span>
+                    <span class="text-stone-700 ml-1">{item.descripcion}</span>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </Cards>
+    <Cards title="🛠️ Stack Tecnológico">
+      <div class="flex flex-wrap gap-2">
+        {
+          tecnologias.map((tech) => (
+            <Badge label={tech.nombre as keyof typeof variants} />
+          ))
+        }
+      </div>
+    </Cards>
+    <Cards title="🏗️ Arquitectura del Sistema">
+      <div class="grid md:grid-cols-2 gap-6">
+        {
+          modulos.map((modulo) => (
+            <div class="border border-stone-200 rounded-lg p-6 bg-white/50">
+              <div class="flex items-center gap-3 mb-3">
+                <modulo.icon className="w-6 h-6 text-blue-500" />
+                <h4 class="text-lg font-semibold text-stone-800">
+                  {modulo.titulo}
+                </h4>
+              </div>
+              <p class="text-stone-600">{modulo.descripcion}</p>
+            </div>
+          ))
+        }
+      </div>
+    </Cards>
+    <Cards title="🔄 Flujo de Trabajo Optimizado">
+      <div
+        class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200"
+      >
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-xl font-semibold text-blue-700 mb-4">
+              Análisis del Proceso Empresarial
+            </h4>
+            <p class="text-stone-600 mb-4">
+              Realicé un estudio exhaustivo del flujo operativo de la empresa,
+              identificando etapas críticas desde el requerimiento inicial hasta
+              la entrega final del producto.
+            </p>
+            <ul class="space-y-2 text-stone-700 text-sm">
+              <li>• <strong>Mapeo de procesos</strong> end-to-end</li>
+              <li>
+                • <strong>Identificación de puntos</strong> de control críticos
+              </li>
+              <li>• <strong>Definición de estados</strong> y transiciones</li>
+              <li>
+                • <strong>Establecimiento de responsabilidades</strong> por etapa
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-green-700 mb-4">
+              Digitalización Implementada
+            </h4>
+            <p class="text-stone-600 mb-4">
+              El sistema digitaliza completamente el flujo operativo,
+              garantizando trazabilidad y control en cada etapa del proceso
+              productivo.
+            </p>
+            <div class="bg-white rounded-lg p-4 border border-green-200">
+              <div class="text-center space-y-3">
+                <div class="flex items-center justify-center">
+                  <div
+                    class="bg-blue-100 text-blue-700 px-3 py-1 rounded-lg text-sm font-medium"
+                  >
+                    Requerimiento Cliente
+                  </div>
+                </div>
+                <div class="text-gray-400">↓</div>
+                <div
+                  class="bg-orange-100 text-orange-700 px-3 py-1 rounded-lg text-sm font-medium"
+                >
+                  Ingreso y Validación
+                </div>
+                <div class="text-gray-400">↓</div>
+                <div
+                  class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg text-sm font-medium"
+                >
+                  Proceso Productivo
+                </div>
+                <div class="text-gray-400">↓</div>
+                <div
+                  class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm font-medium"
+                >
+                  Control de Calidad
+                </div>
+                <div class="text-gray-400">↓</div>
+                <div
+                  class="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium"
+                >
+                  Entrega Final
+                </div>
+              </div>
+              <div class="mt-4 text-center">
+                <span class="text-xs text-stone-500 italic">
+                  Cada etapa con trazabilidad completa y puntos de control
+                  automáticos
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 pt-6 border-t border-blue-200">
+          <h5 class="font-semibold text-blue-700 mb-2">
+            Beneficios del Flujo Digital:
+          </h5>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="flex items-center gap-2">
+              <LuCircleCheckBig className="w-4 h-4 text-green-500" />
+              <span class="text-stone-600">Trazabilidad en tiempo real</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <LuCircleCheckBig className="w-4 h-4 text-green-500" />
+              <span class="text-stone-600"
+                >Controles automáticos de calidad</span
+              >
+            </div>
+            <div class="flex items-center gap-2">
+              <LuCircleCheckBig className="w-4 h-4 text-green-500" />
+              <span class="text-stone-600"
+                >Prevención de errores de proceso</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </Cards>
+
+    <Cards title="📊 Resultados e Impacto">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-xl font-semibold text-blue-600 mb-4">
+            Beneficios Operativos
+          </h4>
+          <ul class="space-y-2 text-stone-600">
+            <li>
+              • <strong>Eliminación del 100%</strong> de duplicación de datos
+            </li>
+            <li>
+              • <strong>Reducción significativa</strong> de errores de transcripción
+            </li>
+            <li>
+              • <strong>Trazabilidad completa</strong> de todos los procesos
+            </li>
+            <li>
+              • <strong>Estandarización</strong> de flujos de trabajo
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold text-green-600 mb-4">
+            Beneficios Técnicos
+          </h4>
+          <ul class="space-y-2 text-stone-600">
+            <li>
+              • <strong>Base de datos centralizada</strong> y consistente
+            </li>
+            <li>
+              • <strong>Backup automático</strong> en Google Drive
+            </li>
+            <li>
+              • <strong>Acceso multiusuario</strong> controlado
+            </li>
+            <li>
+              • <strong>Generación automática</strong> de documentos PDF
+            </li>
+          </ul>
+        </div>
+      </div>
+    </Cards>
+    <Cards title="📸 Capturas de pantalla">
+      <div class="grid md:grid-cols-1 gap-8">
+        {
+          capturas.map((captura) => (
+            captura.url.endsWith(".mp4") ? (
+              <div>
+              <video
+                src={captura.url}
+                controls
+                class="w-full h-auto rounded-lg border border-stone-200"
+              >
+                Tu navegador no soporta la reproducción de videos.
+              </video>
+              <p class="text-sm text-stone-500 text-center mt-2">🎞️ {captura.alt}</p></div>
+            ) : (
+              <div>
+              <img
+                src={captura.url}
+                alt={captura.alt}
+                class="w-full h-auto rounded-lg border border-stone-200"
+              />
+              <p class="text-sm text-stone-500 text-center mt-2">🌄 {captura.alt}</p></div>
+            )
+          ))
+        }
+      </div>
+    </Cards>
+    <Cards title="💡 Aspectos Técnicos Destacables">
+      <div class="grid md:grid-cols-2 gap-4">
+        <ul class="space-y-2 text-stone-600">
+          <li>
+            • <strong>Integración compleja con Google APIs</strong> (Sheets, Drive,
+            OAuth)
+          </li>
+          <li>
+            • <strong>Validación de datos empresariales argentinos</strong>{" "}
+            (CUIT, direcciones)
+          </li>
+          <li>
+            • <strong>Sistema de estados y flujos</strong> complejos
+          </li>
+          <li>
+            • <strong>Arquitectura modular</strong> y escalable
+          </li>
+        </ul>
+        <ul class="space-y-2 text-stone-600">
+          <li>
+            • <strong>Manejo de documentos PDF</strong> automatizado
+          </li>
+          <li>
+            • <strong>Sistema de permisos</strong> y roles de usuario
+          </li>
+          <li>
+            • <strong>Performance optimizada</strong> con lazy loading y caching
+          </li>
+          <li>
+            • <strong>Responsive design</strong> multiplataforma
+          </li>
+        </ul>
+      </div>
+    </Cards>
+    <div class="text-center py-8">
+      <p class="text-lg italic text-stone-600">
+        Este proyecto representa una solución empresarial completa que
+        digitaliza procesos críticos, elimina errores operativos y mejora
+        significativamente la eficiencia organizacional.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

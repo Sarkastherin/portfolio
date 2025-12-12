@@ -7,10 +7,28 @@ import AboutMe from "../components/AboutMe.astro";
 import Testimonies from "../components/Testimonies.astro";
 import CTA from "../components/CTA.astro";
 
-const pageTitle = "Página de inicio";
+const pageTitle = "Katherine Dev - Desarrolladora Web Freelance";
+const description = "Desarrolladora web freelance especializada en React, TypeScript y Astro. Creo aplicaciones modernas, automatizo procesos y desarrollo soluciones digitales personalizadas para empresas.";
+const keywords = [
+  "desarrolladora web freelance",
+  "react developer",
+  "typescript",
+  "astro",
+  "automatización procesos",
+  "aplicaciones web",
+  "desarrollo frontend",
+  "soluciones digitales",
+  "argentina",
+  "katherine dev"
+];
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout 
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  type="website"
+>
   <HeroSection />
   <Services />
   <StartProjects />

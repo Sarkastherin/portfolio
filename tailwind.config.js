@@ -6,6 +6,10 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        'nunito': ['Nunito', 'sans-serif'],
+        'sans': ['Nunito', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+      },
       animation: {
         "fade-in": "fadeIn 0.8s ease-out forwards",
       },

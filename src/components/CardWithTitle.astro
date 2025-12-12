@@ -1,25 +1,4 @@
 ---
-type Technology =
-  | "react"
-  | "vitejs"
-  | "tailwindcss"
-  | "supabase"
-  | "postgresql"
-  | "google_apps_script"
-  | "google_sheets"
-  | "looker_studio"
-  | "google_sites";
-type Badge = {
-  name: Technology;
-  color: string;
-  icon?: string;
-};
-const { title, paragraph, list, badge } = Astro.props as {
-  title: string;
-  paragraph: string;
-  list: string[];
-  badge?: Technology[];
-};
 export const badges = {
   react: {
     name: "React",
@@ -66,7 +45,31 @@ export const badges = {
     color: "bg-gray-300 text-gray-800",
     icon: "/google-sites.png",
   },
+  typescript: {
+    name: "TypeScript",
+    color: "bg-blue-300 text-blue-800",
+    icon: "/typescript.png",
+  },
+  google_drive: {
+    name: "Google Drive",
+    color: "bg-yellow-300 text-yellow-800",
+    icon: "/google-drive.png",
+  },
+  
 };
+type Technology = keyof typeof badges;
+type Badge = {
+  name: Technology;
+  color: string;
+  icon?: string;
+};
+const { title, paragraph, list, badge } = Astro.props as {
+  title: string;
+  paragraph: string;
+  list: string[];
+  badge?: Technology[];
+};
+
 ---
 
 <section class="rounded-lg shadow-sm bg-white p-4 sm:p-6">

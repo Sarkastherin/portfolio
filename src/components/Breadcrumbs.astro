@@ -1,0 +1,52 @@
+---
+export interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="mb-6">
+  <ol class="flex items-center space-x-2 text-sm text-stone-600">
+    <li>
+      <a href="/" class="hover:text-blue-600 transition-colors">
+        <span class="sr-only">Inicio</span>
+        🏠
+      </a>
+    </li>
+    {items.map((item, index) => (
+      <li class="flex items-center space-x-2">
+        <span class="text-stone-400">/</span>
+        {index === items.length - 1 ? (
+          <span class="font-medium text-stone-800" aria-current="page">
+            {item.label}
+          </span>
+        ) : (
+          <a 
+            href={item.href} 
+            class="hover:text-blue-600 transition-colors"
+          >
+            {item.label}
+          </a>
+        )}
+      </li>
+    ))}
+  </ol>
+  
+  <!-- JSON-LD Structured Data for Breadcrumbs -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 2, // +2 because home is position 1
+      "name": item.label,
+      "item": new URL(item.href, "https://portfolio-kathe.netlify.app").href
+    }))
+  })} />
+</nav>
