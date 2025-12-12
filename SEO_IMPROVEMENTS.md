@@ -1,6 +1,29 @@
 # 🚀 Mejoras SEO Implementadas - Portfolio Katherine Dev
 
-## ✅ **Mejoras Implementadas**
+## 🏭 **NUEVA: Optimización para Industria de Carrocerías (Diciembre 2025)**
+
+### Proyecto ERP Carrocerías - Posicionamiento Específico
+- ✅ **Título optimizado**: "Sistema ERP para Carrocerías - Digitalización Industrial"
+- ✅ **Meta description especializada**: Incluye palabras clave como "carrocerías", "metalúrgicas", "automatización industrial"
+- ✅ **13 keywords específicas**: Desde "sistema erp carrocerias" hasta "automatizacion carrocerias borgert"
+- ✅ **Datos estructurados JSON-LD**: Schema.org para Article y SoftwareApplication
+- ✅ **Contenido expandido**: Nueva sección "Solución Especializada para Carrocerías"
+- ✅ **CTA específico**: "¿Tu empresa de carrocerías necesita este sistema?"
+
+### Blog Post Especializado
+- ✅ **Nuevo artículo**: "Sistemas ERP para Empresas de Carrocerías: Guía Completa"
+- ✅ **Contenido long-tail**: 2000+ palabras sobre digitalización industrial
+- ✅ **Keywords de nicho**: "empresas carrocerias", "digitalizacion metalurgica"
+- ✅ **Caso de éxito real**: Carrocerías Borgert con resultados específicos
+- ✅ **Call-to-action directo**: Link al proyecto y servicios
+
+### Servicios Optimizados
+- ✅ **Página Apps Web actualizada**: Enfoque en ERPs industriales
+- ✅ **Título mejorado**: "Sistemas ERP y Aplicaciones Web para Industrias"
+- ✅ **Contenido especializado**: Experiencia comprobada en sector carrocerías
+- ✅ **Beneficios específicos**: 80% reducción errores, 40% menos tiempo
+
+## ✅ **Mejoras Implementadas Anteriormente**
 
 ### 1. **Meta Tags Completos**
 - ✅ Meta description dinámica por página

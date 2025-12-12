@@ -4,9 +4,17 @@ Allow: /
 # Sitemap
 Sitemap: https://portfolio-kathe.netlify.app/sitemap-index.xml
 
+# Priority pages for ERP and industrial software
+# /projects/erp-carrocerias-borgert
+# /blog/sistemas-erp-carrocerias-metalurgicas
+# /services/apps-web
+
 # Disallow admin or private areas (if any)
 # Disallow: /admin/
 # Disallow: /_astro/
 
 # Allow all search engines to index
 Crawl-delay: 1
+
+# Additional sitemaps for specific content
+Sitemap: https://portfolio-kathe.netlify.app/sitemap-0.xml

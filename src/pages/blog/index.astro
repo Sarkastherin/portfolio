@@ -6,7 +6,7 @@ const postModules = import.meta.glob("./*.md", { eager: true });
 const allPosts = Object.entries(postModules).map(
   ([path, mod]: [string, any]) => ({
     ...mod,
-    url: "/blog/" + path.replace("../pages", "").replace(".md", ""),
+    url: "/blog/" + path.replace("./", "").replace(".md", ""),
   })
 );
 const pageTitle = "Blog";
@@ -23,9 +23,9 @@ const pageTitle = "Blog";
         <BlogPost
           url={post.url}
           title={post.frontmatter.title}
-          imgURL={post.frontmatter.img.url}
+          imgURL={post.frontmatter.image?.url || "/promming-girl.png"}
           description={post.frontmatter.description}
-          imgAlt={post.frontmatter.img.alt || "Imagen del post"}
+          imgAlt={post.frontmatter.image?.alt || "Imagen del post"}
         />
       ))
     }

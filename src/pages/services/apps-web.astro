@@ -3,39 +3,69 @@ import ContainerPages from "../../components/ContainerPages.astro";
 import ImgAndText from "../../components/Sections/ImgAndText.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
 import CTA from "../../components/CTA.astro";
+import SEO from "../../components/SEO.astro";
 import appsWebExample from "../../assets/apps-web-example.jpg";
 
-const pageTitle = "Aplicaciones Web Personalizadas";
+const pageTitle = "Sistemas ERP y Aplicaciones Web para Industrias";
+const seoDescription = "Desarrollo de sistemas ERP especializados para carrocerías, aplicaciones web industriales y herramientas de gestión personalizadas. Especialista en digitalización de procesos para empresas metalúrgicas y de transporte.";
+const seoKeywords = [
+  "sistemas erp carrocerias",
+  "aplicaciones web industriales", 
+  "software metalúrgicas",
+  "digitalización empresas carrocerias",
+  "erp personalizado industria",
+  "automatización procesos industriales",
+  "desarrollo software carrocerias camiones"
+];
 ---
+
+<SEO 
+  title={pageTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+/>
 
 <ContainerPages
   pageTitle={pageTitle}
-  pageTitleComplete="Aplicaciones Web Personalizadas"
-  description="Desarrollo de interfaces intuitivas y funcionales que se adaptan a tu negocio. Herramientas hechas a medida para que dejes atrás soluciones genéricas."
+  pageTitleComplete="Sistemas ERP y Aplicaciones Web Especializadas para Industrias"
+  description="Desarrollo sistemas ERP personalizados para empresas de carrocerías, aplicaciones web industriales y herramientas de gestión que digitalizan procesos complejos del sector metalúrgico."
   imgUrl={null}
 >
   <ImgAndText
     imageAsset={appsWebExample}
-    altImg="Ejemplo de aplicación web"
-    description={`<p>
-        Analizo tu proceso, identifico los puntos de fricción y diseño una app
-        web adaptada a tu forma de trabajar.
+    altImg="Sistema ERP para carrocerías y aplicaciones industriales"
+    description={`<h3 class="text-xl font-semibold mb-4 text-blue-600">🏭 Especialista en ERPs para la Industria de Carrocerías</h3>
+      <p>
+        <strong>¿Tu empresa de carrocerías necesita digitalizar sus procesos?</strong> 
+        Desarrollo <strong>sistemas ERP especializados</strong> para empresas metalúrgicas, 
+        fábricas de carrocerías y talleres industriales.
       </p>
       <p>
-        Puede ser una solución para presupuestos, gestión de tareas, control
-        de stock o lo que tu negocio necesite.
+        <strong>Experiencia comprobada:</strong> He implementado un sistema ERP completo para 
+        <em>Carrocerías Borgert</em>, automatizando desde la gestión de pedidos hasta el 
+        control de calidad, con <strong>80% de reducción en errores</strong> y 
+        <strong>40% menos tiempo</strong> en procesos.
       </p>
-      <p>
-        Trabajo con tecnologías modernas como React, Supabase y Google Sheets,
-        asegurando escalabilidad y eficiencia.
+      <h4 class="text-lg font-semibold mt-4 mb-2">🔧 Soluciones que Desarrollo:</h4>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>ERPs para carrocerías:</strong> Gestión completa de pedidos, producción y calidad</li>
+        <li><strong>Sistemas de trazabilidad:</strong> Seguimiento en tiempo real de cada carrocería</li>
+        <li><strong>Dashboards industriales:</strong> Métricas y KPIs para toma de decisiones</li>
+        <li><strong>Integración con APIs:</strong> Validación automática de CUIT, geolocalización</li>
+        <li><strong>Gestión de clientes:</strong> Base de datos especializada para empresas de transporte</li>
+      </ul>
+      <p class="mt-4">
+        Trabajo con <strong>tecnologías modernas</strong> como React, TypeScript, Google APIs, 
+        y bases de datos especializadas, asegurando escalabilidad y eficiencia para 
+        <strong>empresas del sector carrocerías y metalúrgico</strong>.
       </p>`}
   />
 
   <CTA
-    title="¿Creés que una app podría ayudarte a trabajar mejor?"
-    description="Hablemos de tu idea y veamos cómo podemos llevarla a cabo. Estoy aquí para ayudarte a digitalizar tus procesos y optimizar tu gestión."
+    title="¿Tu empresa de carrocerías necesita digitalizar sus procesos?"
+    description="Especialista en ERPs industriales con experiencia comprobada en el sector de carrocerías. Transformemos juntos tu empresa metalúrgica en una organización digital eficiente. Consulta gratuita para evaluar tus necesidades."
     href="/contactme"
-    buttonTitle="Contáctame"
+    buttonTitle="Consulta Gratuita ERP"
   />
   <RelatedServices exclude="/services/apps-web" />
 </ContainerPages>

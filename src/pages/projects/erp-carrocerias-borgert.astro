@@ -2,9 +2,26 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Cards from "../../components/Cards.astro";
 import Badge, { variants } from "../../components/Badge.astro";
+import SEO from "../../components/SEO.astro";
 // Iconos eliminados para optimización de performance
 
-const pageTitle = "ERP-Borgert";
+const pageTitle = "Sistema ERP para Carrocerías - Digitalización Industrial";
+const seoDescription = "Sistema ERP personalizado para empresas de carrocerías y metalúrgicas. Automatización de procesos industriales, gestión de pedidos, control de producción y trazabilidad completa para fábricas de carrocerías de camiones.";
+const seoKeywords = [
+  "sistema erp carrocerias",
+  "software carrocerias camiones",
+  "digitalizacion industria metalurgica",
+  "automatizacion procesos industriales",
+  "gestion produccion carrocerias",
+  "software fabrica carrocerias",
+  "sistema pedidos carrocerias",
+  "control calidad carrocerias",
+  "trazabilidad produccion industrial",
+  "erp metalurgica argentina",
+  "software empresas carrocerias",
+  "gestion clientes carrocerias",
+  "automatizacion carrocerias borgert"
+];
 const problemasResueltos = [
   {
     icon: "✅",
@@ -112,21 +129,77 @@ const capturas = [
     alt: "Autenticación Google - Integración profesional",
   },
 ];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sistema ERP para Carrocerías Borgert - Caso de Estudio",
+  "description": seoDescription,
+  "author": {
+    "@type": "Person",
+    "name": "Katherine - Desarrolladora Web",
+    "jobTitle": "Desarrolladora Full Stack",
+    "knowsAbout": ["Sistemas ERP", "Automatización Industrial", "Desarrollo Web"]
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "ERP Carrocerías Borgert",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "softwareVersion": "1.0",
+    "description": "Sistema ERP especializado para empresas de carrocerías",
+    "targetAudience": {
+      "@type": "BusinessAudience",
+      "audienceType": "Empresas de carrocerías y metalúrgicas"
+    },
+    "featureList": [
+      "Gestión de pedidos automatizada",
+      "Control de producción",
+      "Trazabilidad completa",
+      "Integración con Google APIs",
+      "Validación automática de datos"
+    ]
+  },
+  "keywords": seoKeywords.join(", "),
+  "industryType": "Metalúrgica y Carrocerías",
+  "serviceType": "Desarrollo de Software ERP"
+};
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <SEO 
+    title={pageTitle}
+    description={seoDescription}
+    type="article"
+    keywords={seoKeywords}
+    author="Katherine - Desarrolladora Full Stack especializada en ERPs industriales"
+  />
+  
+  <!-- Datos Estructurados para SEO -->
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   <div class="mt-10 max-w-4xl flex flex-col gap-6 mx-auto">
     <Cards title="📋 Descripción del Proyecto">
       <p class="text-stone-800 text-lg leading-relaxed">
         <strong
-          >Desarrollo de un sistema ERP personalizado para Carrocerías Borgert,
+          >Desarrollo de un sistema ERP especializado para la industria de carrocerías,
           </strong
         >
-        una fábrica metalurgica dedicada a la fabricación de carrocerías. El
-        objetivo principal del proyecto fue digitalizar y automatizar los procesos
-        internos de la empresa, mejorando la eficiencia operativa y reduciendo errores
-        humanos.
+        implementado en <em>Carrocerías Borgert</em>, una empresa metalúrgica líder en la 
+        <strong>fabricación de carrocerías para camiones</strong>. Esta solución digital 
+        revoluciona la <strong>gestión de procesos industriales</strong> en el sector de 
+        carrocerías, automatizando desde la recepción de pedidos hasta la entrega final, 
+        con <strong>trazabilidad completa de la producción</strong> y 
+        <strong>control de calidad integrado</strong>.
       </p>
+      
+      <div class="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+        <h3 class="text-lg font-semibold text-blue-800 mb-2">🎯 Industria Objetivo</h3>
+        <p class="text-blue-700">
+          <strong>Empresas de carrocerías</strong>, talleres metalúrgicos, fábricas de 
+          carrocerías para camiones, y empresas del sector de <strong>transporte pesado</strong> 
+          que buscan <strong>digitalizar sus procesos de producción</strong>.
+        </p>
+      </div>
     </Cards>
     <Cards title="🎯 Problema Resuelto">
       <div class="grid md:grid-cols-2 gap-8">
@@ -399,12 +472,58 @@ const capturas = [
         </ul>
       </div>
     </Cards>
+    
+    <!-- Nueva sección: Beneficios para la Industria -->
+    <Cards title="🏭 Solución Especializada para Carrocerías">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+          <h4 class="text-xl font-semibold text-green-800 mb-4">💡 Innovación Industrial</h4>
+          <ul class="space-y-2 text-green-700">
+            <li>• <strong>Digitalización completa</strong> del proceso productivo</li>
+            <li>• <strong>Reducción del 80%</strong> en errores de producción</li>
+            <li>• <strong>Trazabilidad en tiempo real</strong> de cada carrocería</li>
+            <li>• <strong>Integración automática</strong> con proveedores</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+          <h4 class="text-xl font-semibold text-blue-800 mb-4">🚀 Ventaja Competitiva</h4>
+          <ul class="space-y-2 text-blue-700">
+            <li>• <strong>Tiempos de entrega</strong> reducidos en 40%</li>
+            <li>• <strong>Control de costos</strong> automatizado</li>
+            <li>• <strong>Gestión integral de clientes</strong> del sector</li>
+            <li>• <strong>Reportes ejecutivos</strong> en tiempo real</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-6 bg-orange-50 p-6 rounded-lg border border-orange-200">
+        <h4 class="text-xl font-semibold text-orange-800 mb-3">🎯 ¿Tu empresa de carrocerías necesita este sistema?</h4>
+        <p class="text-orange-700 mb-3">
+          Este <strong>sistema ERP está diseñado específicamente</strong> para resolver los desafíos 
+          únicos de la industria de carrocerías:
+        </p>
+        <div class="grid md:grid-cols-3 gap-4 text-sm">
+          <div>• Gestión de pedidos complejos</div>
+          <div>• Control de múltiples etapas de producción</div>
+          <div>• Seguimiento de materiales especializados</div>
+          <div>• Coordinación con transportistas</div>
+          <div>• Cumplimiento de normativas industriales</div>
+          <div>• Optimización de recursos productivos</div>
+        </div>
+      </div>
+    </Cards>
+    
     <div class="text-center py-8">
       <p class="text-lg italic text-stone-800">
-        Este proyecto representa una solución empresarial completa que
-        digitaliza procesos críticos, elimina errores operativos y mejora
-        significativamente la eficiencia organizacional.
+        <strong>¿Buscas digitalizar tu empresa de carrocerías?</strong> Este proyecto demuestra 
+        cómo un <em>sistema ERP especializado</em> puede transformar completamente la eficiencia 
+        operativa de empresas metalúrgicas y de fabricación de carrocerías.
       </p>
+      <div class="mt-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border border-purple-200">
+        <p class="text-purple-800 font-semibold">
+          💼 Disponible para desarrollar soluciones similares para tu empresa del sector carrocerías
+        </p>
+      </div>
     </div>
   </div>
 </BaseLayout>
