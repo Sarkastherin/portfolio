@@ -2,39 +2,32 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Cards from "../../components/Cards.astro";
 import Badge, { variants } from "../../components/Badge.astro";
-import {
-  LuCircleCheckBig,
-  LuWorkflow,
-  LuFileText,
-  LuUsers,
-  LuShield,
-  LuSettings,
-} from "react-icons/lu";
+// Iconos eliminados para optimización de performance
 
 const pageTitle = "ERP-Borgert";
 const problemasResueltos = [
   {
-    icon: LuCircleCheckBig,
+    icon: "✅",
     titulo: "Fuente única de verdad",
     descripcion: "Sistema centralizado que elimina la duplicación de datos",
   },
   {
-    icon: LuWorkflow,
+    icon: "⚡",
     titulo: "Flujo de trabajo automatizado",
     descripcion: "Proceso digital completo desde pedido hasta entrega",
   },
   {
-    icon: LuFileText,
+    icon: "📊",
     titulo: "Trazabilidad completa",
     descripcion: "Seguimiento en tiempo real del estado de cada pedido",
   },
   {
-    icon: LuUsers,
+    icon: "👥",
     titulo: "Gestión unificada de clientes",
     descripcion: "Base de datos centralizada con validaciones automáticas",
   },
   {
-    icon: LuShield,
+    icon: "🔒",
     titulo: "Reducción de errores",
     descripcion: "Validaciones automáticas y formularios inteligentes",
   },
@@ -66,24 +59,24 @@ const tecnologias = [
 ];
 const modulos = [
   {
-    icon: LuShield,
+    icon: "🔒",
     titulo: "Autenticación y Seguridad",
     descripcion: "Login con Google OAuth, sesiones seguras y control de acceso",
   },
   {
-    icon: LuFileText,
+    icon: "📋",
     titulo: "Gestión de Pedidos",
     descripcion:
       "Core del sistema con 7 secciones integradas: Pedido, Camión, Carrocería, Trabajo en chasis, Datos de colocación, Órdenes de trabajo, Controles de calidad",
   },
   {
-    icon: LuUsers,
+    icon: "👥",
     titulo: "Gestión de Clientes",
     descripcion:
       "CRUD completo con validación de CUIT, prevención de duplicados e integración con Georef Argentina",
   },
   {
-    icon: LuSettings,
+    icon: "⚙️",
     titulo: "Sistema de Parámetros",
     descripcion:
       "Configuración flexible de colores, tipos de carrocería, personal e ítems de control",
@@ -99,11 +92,11 @@ const capturasSugeridas = [
 ];
 const capturas = [
   {
-    url: "/ss_proyectos/screenshots/dashboard_principal.png",
+    url: "/ss_proyectos/screenshots/dashboard_principal.webp",
     alt: "Dashboard Principal - Arquitectura modular",
   },
   {
-    url: "/ss_proyectos/screenshots/validacion_cuit.png",
+    url: "/ss_proyectos/screenshots/validacion_cuit.webp",
     alt: "Gestión de Clientes - Validaciones automáticas",
   },
   {
@@ -111,7 +104,7 @@ const capturas = [
     alt: "Formulario de Cliente - APIs externas GeoRefer Argentina",
   },
   {
-    url: "/ss_proyectos/screenshots/responsive.png",
+    url: "/ss_proyectos/screenshots/responsive.webp",
     alt: "Vista Responsive - Adaptabilidad",
   },
   {
@@ -124,7 +117,7 @@ const capturas = [
 <BaseLayout pageTitle={pageTitle}>
   <div class="mt-10 max-w-4xl flex flex-col gap-6 mx-auto">
     <Cards title="📋 Descripción del Proyecto">
-      <p class="text-stone-600 text-lg leading-relaxed">
+      <p class="text-stone-800 text-lg leading-relaxed">
         <strong
           >Desarrollo de un sistema ERP personalizado para Borgert Argentina,
           una</strong
@@ -157,7 +150,7 @@ const capturas = [
             {
               problemasResueltos.map((item) => (
                 <div class="flex items-start gap-3">
-                  <item.icon className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-lg mt-0.5 flex-shrink-0">{item.icon}</span>
                   <div>
                     <span class="font-semibold text-stone-800">
                       {item.titulo}
@@ -186,12 +179,12 @@ const capturas = [
           modulos.map((modulo) => (
             <div class="border border-stone-200 rounded-lg p-6 bg-white/50">
               <div class="flex items-center gap-3 mb-3">
-                <modulo.icon className="w-6 h-6 text-blue-500" />
+                <span class="text-2xl">{modulo.icon}</span>
                 <h4 class="text-lg font-semibold text-stone-800">
                   {modulo.titulo}
                 </h4>
               </div>
-              <p class="text-stone-600">{modulo.descripcion}</p>
+              <p class="text-stone-800">{modulo.descripcion}</p>
             </div>
           ))
         }
@@ -206,7 +199,7 @@ const capturas = [
             <h4 class="text-xl font-semibold text-blue-700 mb-4">
               Análisis del Proceso Empresarial
             </h4>
-            <p class="text-stone-600 mb-4">
+            <p class="text-stone-800 mb-4">
               Realicé un estudio exhaustivo del flujo operativo de la empresa,
               identificando etapas críticas desde el requerimiento inicial hasta
               la entrega final del producto.
@@ -226,7 +219,7 @@ const capturas = [
             <h4 class="text-xl font-semibold text-green-700 mb-4">
               Digitalización Implementada
             </h4>
-            <p class="text-stone-600 mb-4">
+            <p class="text-stone-800 mb-4">
               El sistema digitaliza completamente el flujo operativo,
               garantizando trazabilidad y control en cada etapa del proceso
               productivo.
@@ -266,7 +259,7 @@ const capturas = [
                 </div>
               </div>
               <div class="mt-4 text-center">
-                <span class="text-xs text-stone-500 italic">
+                <span class="text-xs text-stone-700 italic">
                   Cada etapa con trazabilidad completa y puntos de control
                   automáticos
                 </span>
@@ -280,18 +273,18 @@ const capturas = [
           </h5>
           <div class="grid md:grid-cols-3 gap-4 text-sm">
             <div class="flex items-center gap-2">
-              <LuCircleCheckBig className="w-4 h-4 text-green-500" />
-              <span class="text-stone-600">Trazabilidad en tiempo real</span>
+              <span class="text-green-500">✅</span>
+              <span class="text-stone-800">Trazabilidad en tiempo real</span>
             </div>
             <div class="flex items-center gap-2">
-              <LuCircleCheckBig className="w-4 h-4 text-green-500" />
-              <span class="text-stone-600"
+              <span class="text-green-500">✅</span>
+              <span class="text-stone-800"
                 >Controles automáticos de calidad</span
               >
             </div>
             <div class="flex items-center gap-2">
-              <LuCircleCheckBig className="w-4 h-4 text-green-500" />
-              <span class="text-stone-600"
+              <span class="text-green-500">✅</span>
+              <span class="text-stone-800"
                 >Prevención de errores de proceso</span
               >
             </div>
@@ -306,7 +299,7 @@ const capturas = [
           <h4 class="text-xl font-semibold text-blue-600 mb-4">
             Beneficios Operativos
           </h4>
-          <ul class="space-y-2 text-stone-600">
+          <ul class="space-y-2 text-stone-800">
             <li>
               • <strong>Eliminación del 100%</strong> de duplicación de datos
             </li>
@@ -325,7 +318,7 @@ const capturas = [
           <h4 class="text-xl font-semibold text-green-600 mb-4">
             Beneficios Técnicos
           </h4>
-          <ul class="space-y-2 text-stone-600">
+          <ul class="space-y-2 text-stone-800">
             <li>
               • <strong>Base de datos centralizada</strong> y consistente
             </li>
@@ -355,15 +348,18 @@ const capturas = [
               >
                 Tu navegador no soporta la reproducción de videos.
               </video>
-              <p class="text-sm text-stone-500 text-center mt-2">🎞️ {captura.alt}</p></div>
+              <p class="text-sm text-stone-700 text-center mt-2">🎞️ {captura.alt}</p></div>
             ) : (
               <div>
               <img
                 src={captura.url}
                 alt={captura.alt}
                 class="w-full h-auto rounded-lg border border-stone-200"
+                width="800"
+                height="600"
+                loading="lazy"
               />
-              <p class="text-sm text-stone-500 text-center mt-2">🌄 {captura.alt}</p></div>
+              <p class="text-sm text-stone-700 text-center mt-2">🌄 {captura.alt}</p></div>
             )
           ))
         }
@@ -371,7 +367,7 @@ const capturas = [
     </Cards>
     <Cards title="💡 Aspectos Técnicos Destacables">
       <div class="grid md:grid-cols-2 gap-4">
-        <ul class="space-y-2 text-stone-600">
+        <ul class="space-y-2 text-stone-800">
           <li>
             • <strong>Integración compleja con Google APIs</strong> (Sheets, Drive,
             OAuth)
@@ -387,7 +383,7 @@ const capturas = [
             • <strong>Arquitectura modular</strong> y escalable
           </li>
         </ul>
-        <ul class="space-y-2 text-stone-600">
+        <ul class="space-y-2 text-stone-800">
           <li>
             • <strong>Manejo de documentos PDF</strong> automatizado
           </li>
@@ -404,7 +400,7 @@ const capturas = [
       </div>
     </Cards>
     <div class="text-center py-8">
-      <p class="text-lg italic text-stone-600">
+      <p class="text-lg italic text-stone-800">
         Este proyecto representa una solución empresarial completa que
         digitaliza procesos críticos, elimina errores operativos y mejora
         significativamente la eficiencia organizacional.

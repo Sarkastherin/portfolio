@@ -13,7 +13,7 @@ export default function Screenshots({
   screenshots: Screenshot[];
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   function openModal(index: number) {
     setActiveIndex(index);
@@ -50,6 +50,9 @@ export default function Screenshots({
                   src={screenshot.url}
                   className="object-cover w-full h-full"
                   alt={screenshot.alt}
+                  width="600"
+                  height="400"
+                  loading="lazy"
                   onClick={() => openModal(index)}
                 />
               </div>
@@ -139,7 +142,7 @@ export default function Screenshots({
               </svg>
             </button>
           </div>
-          <img className="border border-stone-300 rounded-2xl" src={screenshots[activeIndex]?.url} alt={screenshots[activeIndex]?.alt} />
+          <img className="border border-stone-300 rounded-2xl" src={screenshots[activeIndex]?.url} alt={screenshots[activeIndex]?.alt} width="800" height="600" loading="lazy" />
 
           <div className="mt-4">
             <p className="text-pretty text-sm text-stone-700">

@@ -86,7 +86,7 @@ const { title, paragraph, list, badge } = Astro.props as {
             class={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${badges[badge].color}`}
           >
             {badges[badge].icon && (
-              <img src={badges[badge].icon} alt={badges[badge].name} class="w-4 h-4 mr-2" />
+              <img src={badges[badge].icon} alt="" class="w-4 h-4 mr-2" width="16" height="16" />
             )}
             {badges[badge].name}
           </span>

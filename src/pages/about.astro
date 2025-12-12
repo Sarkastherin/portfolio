@@ -2,6 +2,7 @@
 import ContainerPages from "../components/ContainerPages.astro";
 import Experience from "../components/Experience.astro";
 import ImgAndText from "../components/Sections/ImgAndText.astro";
+import aboutMePicture from "../assets/about-me-picture.jpg";
 const pageTitle = "Sobre mí";
 ---
 
@@ -12,7 +13,7 @@ const pageTitle = "Sobre mí";
   imgUrl={null}
 >
   <ImgAndText
-    urlImg="/about-me-picture.jpg"
+    imageAsset={aboutMePicture}
     altImg="Katherin Guerrero"
     description=`<p>
         Soy Katherin Guerrero, desarrolladora web, analista de procesos y una
@@ -43,7 +44,7 @@ const pageTitle = "Sobre mí";
   </div>
   <!-- Enfoque de trabajo -->
   <div class="bg-white p-6 rounded-xl shadow">
-    <p class="text-stone-700 text-lg text-center max-w-3xl mx-auto">
+    <p class="text-stone-800 text-lg text-center max-w-3xl mx-auto">
       Creo que el trabajo no tiene que ser tan pesado. Que si algo se repite
       mucho, se puede automatizar. Y que entender a las personas es tan
       fundamental como enteder el proceso.

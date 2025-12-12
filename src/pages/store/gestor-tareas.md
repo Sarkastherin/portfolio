@@ -7,7 +7,7 @@ price:
   type: "free"
   mount: 0
 img:
-  url: "/store/gestor-tareas-cover.png"
+  url: "/store/gestor-tareas-cover.webp"
   alt: "Portada del gestor de tareas"
 cta:
   text: "Descargar Gratis"
@@ -15,25 +15,25 @@ cta:
 screenshots:
   [
     {
-      url: "/store/gestor-tareas-ss1.png",
+      url: "/store/gestor-tareas-ss1.webp",
       alt: "",
       title: "",
       description: "",
     },
     {
-      url: "/store/gestor-tareas-ss2.png",
+      url: "/store/gestor-tareas-ss2.webp",
       alt: "",
       title: "",
       description: "",
     },
     {
-      url: "/store/gestor-tareas-ss3.png",
+      url: "/store/gestor-tareas-ss3.webp",
       alt: "",
       title: "",
       description: "",
     },
     {
-      url: "/store/gestor-tareas-ss4.png",
+      url: "/store/gestor-tareas-ss4.webp",
       alt: "",
       title: "",
       description: "",
@@ -61,12 +61,12 @@ Una hoja de cálculo inteligente que permite:
 - 📬 Plantillas de email listas para usar
 ## 🖼️ Vista previa
 
-![Captura 3](/store/gestor-tareas-ss3.png)
-![Captura 4](/store/gestor-tareas-ss4.png)
-![Captura 5](/store/gestor-tareas-ss5.png)
-![Captura 6](/store/gestor-tareas-ss6.png)
-![Captura 7](/store/gestor-tareas-ss7.png)
-![Captura 8](/store/gestor-tareas-ss8.png)
+![Captura 3](/store/gestor-tareas-ss3.webp)
+![Captura 4](/store/gestor-tareas-ss4.webp)
+![Captura 5](/store/gestor-tareas-ss5.webp)
+![Captura 6](/store/gestor-tareas-ss6.webp)
+![Captura 7](/store/gestor-tareas-ss7.webp)
+![Captura 8](/store/gestor-tareas-ss8.webp)
 ## 🎯 Ideal para:
 
 - Equipos pequeños sin herramientas caras

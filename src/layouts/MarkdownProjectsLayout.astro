@@ -10,18 +10,18 @@ import Screenshots from "../components/ProjectSSComponent.tsx"
     <!-- Subheader -->
     <section class="overflow-hidden rounded-lg shadow-sm">
       <div class="h-76 overflow-hidden">
-        <img alt={frontmatter.image.alt} src={frontmatter.image.url} />
+        <img alt={frontmatter.image.alt} src={frontmatter.image.url} width="800" height="400" loading="lazy" />
       </div>
 
       <div class="bg-white p-4 sm:p-6">
-        <time datetime="2022-10-10" class="block text-xs text-stone-600">
+        <time datetime="2022-10-10" class="block text-xs text-stone-700">
           {frontmatter.pubDate.toString().slice(0, 10)}
         </time>
         <h2 class="mt-0.5 text-2xl font-bold text-rose-500">
           {frontmatter.title}
         </h2>
 
-        <p class="mt-2 line-clamp-3 text-md/relaxed text-stone-600">
+        <p class="mt-2 line-clamp-3 text-md/relaxed text-stone-800">
           {frontmatter.description}
         </p>
       </div>
@@ -44,6 +44,6 @@ import Screenshots from "../components/ProjectSSComponent.tsx"
       title="🤖 Tecnologías Utilizadas"
       badge={frontmatter.tech}
     />
-    <Screenshots client:load screenshots={frontmatter.screenshots} />    
+    <Screenshots client:visible screenshots={frontmatter.screenshots} />    
   </div>
 </BaseLayout>

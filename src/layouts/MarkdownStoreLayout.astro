@@ -1,7 +1,5 @@
 ---
-import { FaExternalLinkAlt } from "react-icons/fa";
 import Badge from "../components/Badge.astro";
-import { PiCoffeeDuotone } from "react-icons/pi";
 import ButtonNav from "../components/ButtonNav.astro";
 import Screenshots from "../components/ProjectSSComponent";
 //MarkdownPostLayout.astro
@@ -24,14 +22,14 @@ const url = Astro.url.href || "https://your-default-url.com";
       <p>{frontmatter.description}</p>
       {
         frontmatter.subtitle && (
-          <p class="text-lg text-stone-700">{frontmatter.subtitle}</p>
+          <p class="text-lg text-stone-800">{frontmatter.subtitle}</p>
         )
       }
       {
         frontmatter.tags && (
           <div class="flex flex-wrap gap-2 my-4">
             {frontmatter.tags.map((tag: string) => (
-              <span class="bg-stone-100 text-stone-700 px-2 py-1 text-sm rounded">
+              <span class="bg-stone-200 text-stone-800 px-2 py-1 text-sm rounded">
                 {tag}
               </span>
             ))}
@@ -42,8 +40,11 @@ const url = Astro.url.href || "https://your-default-url.com";
         frontmatter.img && (
           <img
             src={frontmatter.img.url}
-            alt={frontmatter.img.alt || frontmatter.title}
+            alt={frontmatter.img.alt || "Imagen del producto"}
             class="w-full h-auto rounded-lg mt-4"
+            width="800"
+            height="400"
+            loading="lazy"
           />
         )
       }
@@ -62,7 +63,9 @@ const url = Astro.url.href || "https://your-default-url.com";
             class="flex items-center gap-2 rounded border border-blue-600 bg-blue-600 px-8 py-2 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1"
           >
             Descargar{" "}
-            <FaExternalLinkAlt />
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/>
+            </svg>
           </span>
         </a>
       </div>
@@ -75,7 +78,7 @@ const url = Astro.url.href || "https://your-default-url.com";
 
 
     <!-- 🔗 Links relacionados o llamadas a la acción -->
-    <footer class="mt-12 border-t pt-6 text-sm text-stone-500">
+    <footer class="mt-12 border-t pt-6 text-sm text-stone-700">
       <p>
         🚀 ¡Más productos pronto disponibles en esta sección! <a
           href="/store"
@@ -100,6 +103,8 @@ const url = Astro.url.href || "https://your-default-url.com";
         src="https://cdn.cafecito.app/imgs/buttons/button_5.png"
         alt="Invitame un café en cafecito.app"
         class="my-2 mx-auto"
+        width="200"
+        height="60"
       />
     </a>
   </div>
@@ -111,7 +116,10 @@ const url = Astro.url.href || "https://your-default-url.com";
       class="inline-block rounded-full border border-rose-500 bg-rose-500 p-3 text-white hover:bg-transparent hover:text-rose-500 focus:ring-3 focus:outline-hidden"
       title="Invitame un café ☕"
     >
-      <PiCoffeeDuotone />
+      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M2 21h15l1.5-1.5L20 18v-4c0-1.1-.9-2-2-2h-1V7c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14zm2-14h11v5H4V7zm13 5v4l-1.5 1.5H4v-1l11-4.5z"/>
+        <circle cx="7" cy="17" r="2"/>
+      </svg>
     </a>
   </div>
 </BaseLayout>

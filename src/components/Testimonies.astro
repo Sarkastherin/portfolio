@@ -39,7 +39,7 @@ if (values.length > 0) {
   <div class="grid gap-8 md:grid-cols-3">
     {rows.map((t, i) => (
       <div class="bg-white rounded-2xl shadow-md p-6 text-left relative">
-        <p class="text-stone-700 text-sm leading-relaxed max-h-32 overflow-hidden transition-all duration-300" data-quote>
+        <p class="text-stone-800 text-sm leading-relaxed max-h-32 overflow-hidden transition-all duration-300" data-quote>
           "{t.testimonio}"
         </p>
         <button type="button" class="text-rose-500 text-sm font-medium mt-2" data-toggle>
@@ -47,13 +47,13 @@ if (values.length > 0) {
         </button>
         <div class="mt-4">
           <p class="font-semibold text-stone-800">{t.nombre_completo}</p>
-          <p class="text-xs text-stone-500">{t.cargo_actual}</p>
+          <p class="text-xs text-stone-700">{t.cargo_actual}</p>
         </div>
       </div>
     ))}
   </div>
 ) : (
-  <p class="text-center text-stone-500">No hay testimonios disponibles en este momento.</p>
+  <p class="text-center text-stone-700">No hay testimonios disponibles en este momento.</p>
 )}
 </SectionLayout>
 <!-- JS para el toggle -->

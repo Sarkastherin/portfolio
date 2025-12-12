@@ -3,6 +3,7 @@ import ContainerPages from "../../components/ContainerPages.astro";
 import ImgAndText from "../../components/Sections/ImgAndText.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
 import CTA from "../../components/CTA.astro";
+import appsWebExample from "../../assets/apps-web-example.jpg";
 
 const pageTitle = "Aplicaciones Web Personalizadas";
 ---
@@ -14,7 +15,7 @@ const pageTitle = "Aplicaciones Web Personalizadas";
   imgUrl={null}
 >
   <ImgAndText
-    urlImg="/apps-web-example.jpg"
+    imageAsset={appsWebExample}
     altImg="Ejemplo de aplicación web"
     description={`<p>
         Analizo tu proceso, identifico los puntos de fricción y diseño una app

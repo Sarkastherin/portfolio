@@ -3,8 +3,9 @@ import ContainerPages from "../../components/ContainerPages.astro";
 import ImgAndText from "../../components/Sections/ImgAndText.astro";
 import RelatedServices from "../../components/RelatedServices.astro";
 import CTA from "../../components/CTA.astro";
+import workerOnDesk from "../../assets/worker-on-desk.png";
 
-const pageTitle = "Automatizaciones";
+const pageTitle = "Automatización con Apps Script";
 ---
 
 <ContainerPages
@@ -14,7 +15,7 @@ const pageTitle = "Automatizaciones";
   imgUrl={null}
 >
   <ImgAndText
-    urlImg="/worker-on-desk.png"
+    imageAsset={workerOnDesk}
     altImg="mujer trabajando en un escritorio"
     description={`
     <p>El famoso <em>copy-paste</em> sigue siendo parte del día a día en muchas oficinas. Estas tareas repetitivas consumen tiempo, energía y son propensas a errores.</p>

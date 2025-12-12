@@ -1,6 +1,7 @@
 ---
 import SectionLayout from "../layouts/SectionLayout.astro";
 import { Image } from "astro:assets";
+import aboutMePicture from "../assets/about-me-picture-side.jpg";
 ---
 
 <SectionLayout title="Sobre mí">
@@ -31,11 +32,13 @@ import { Image } from "astro:assets";
 
         <div>
           <Image
-            src="/about-me-picture-side.jpg"
+            src={aboutMePicture}
             class="rounded-lg shadow-lg"
-            alt="foto-perfil-katherin"
+            alt="Katherin sonriendo en su espacio de trabajo"
             width={530}
             height={300}
+            loading="lazy"
+            format="webp"
           />
         </div>
       </div>

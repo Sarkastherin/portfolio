@@ -14,12 +14,15 @@
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
     "@types/react-dom": "^19.1.6",
-    "react-icons": "^5.5.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
+    "@squoosh/lib": "^0.3.1",
     "@tailwindcss/typography": "^0.5.16",
     "@types/react": "^19.1.8",
-    "astro": "^5.12.0"
+    "astro": "^5.12.0",
+    "glob": "^13.0.0",
+    "terser": "^5.44.1"
   }
 }

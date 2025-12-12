@@ -23,7 +23,7 @@ const projects: Projects[] = [
       "Una aplicación web para gestionar pedidos, en una fabrica de carrocerías",
     tech: ["react", "vitejs", "tailwindcss"],
     image: {
-      url: "/ss_proyectos/portadas/truckFlow_home.png",
+      url: "/ss_proyectos/portadas/truckFlow_home.webp",
       alt: "Aplicación de Gestión de Tareas",
     },
     url: "/projects/erp-carrocerias-borgert",
@@ -35,7 +35,7 @@ const projects: Projects[] = [
       "Simplificando la Gestión Comercial y Operativa para la Industria de la Construcción",
     tech: ["react", "vitejs", "tailwindcss", "supabase", "postgresql"],
     image: {
-      url: "/quotes-app-ss/portada.png",
+      url: "/quotes-app-ss/portada.webp",
       alt: "App de Cotizaciones y Oportunidades",
     },
     url: "/projects/quotes-app",
@@ -52,7 +52,7 @@ const projects: Projects[] = [
       "google_sites",
     ],
     image: {
-      url: "/order-management/portada.png",
+      url: "/order-management/portada.webp",
       alt: "Sistema de Pedidos Técnicos para Planta de Producción",
     },
     url: "/projects/order-management",
@@ -89,9 +89,9 @@ const projects: Projects[] = [
             <h3 class="text-xl font-semibold text-stone-800 mb-2">
               {project.title}
             </h3>
-            <p class="text-sm text-stone-600 mb-4">{project.description}</p>
+            <p class="text-sm text-stone-800 mb-4">{project.description}</p>
 
-            <ul class="flex flex-wrap gap-2 text-xs text-stone-500 mb-4">
+            <ul class="flex flex-wrap gap-2 text-xs text-stone-700 mb-4">
               {project.tech.map((tech) => (
                 <li>
                   <Badge label={tech} />

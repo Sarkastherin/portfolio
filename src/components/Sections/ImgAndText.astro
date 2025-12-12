@@ -1,12 +1,29 @@
 ---
-const {urlImg, altImg,description} = Astro.props;
+import { Image } from "astro:assets";
+
+const {urlImg, altImg, description, imageAsset} = Astro.props;
 ---
 <div class="grid md:grid-cols-2 gap-10 items-center -mt-10">
-  <img
-    src={urlImg}
-    alt={altImg}
-    class="w-full rounded-xl shadow-md"
-  />
+  {imageAsset ? (
+    <Image
+      src={imageAsset}
+      alt={altImg}
+      class="w-full rounded-xl shadow-md"
+      width={600}
+      height={400}
+      loading="lazy"
+      format="webp"
+    />
+  ) : (
+    <img
+      src={urlImg}
+      alt={altImg}
+      class="w-full rounded-xl shadow-md"
+      width="600"
+      height="400"
+      loading="lazy"
+    />
+  )}
 
   <div class="space-y-4 text-base" set:html={description}>
   </div>
